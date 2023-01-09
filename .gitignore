@@ -4,6 +4,7 @@ logs
 *.log
 *.txt
 /src/php
+/src/visitor
 
 # dependencies
 /node_modules
