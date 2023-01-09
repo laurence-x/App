@@ -1,9 +1,7 @@
-import React, { useEffect, useRef, useState } from "react"
-
-// ~ refs: access the dom, for managing focus, text selection, etc.
+import { useEffect, useRef, useState } from "react"
 
 const UseRf = () => {
-    // * Timer
+    // Timer
     const [ number, setTimer ] = useState(0)
     const refVal = useRef<number | null>()
     const stopCount = () => {
@@ -16,19 +14,19 @@ const UseRf = () => {
         return () => stopCount()
     }, [])
 
-    // * Focus
+    // Focus
     // (null!) non-null assertion: no optional chaining after current?.focus()
-    const txtinp = useRef<HTMLInputElement>(null!) // get the ref input element
+    const txtinp = useRef<HTMLInputElement>(null!)
     const focusX = () => {
-        txtinp.current.focus() // on btn click, focus on text input
+        txtinp.current.focus()
         txtinp.current.value = "" // reset the text input value
     }
 
-    // * Value
+    // Value
     const [ inpVal, setInputValue ] = useState("")
     const iChange = (e: { target: { value: string } }) => {
         setInputValue(e.target.value)
-        // just stopping the count from above
+        // stop the count from above
         if (refVal.current) window.clearInterval(refVal.current)
     }
     // target the ref input element: "Object {current: value}"
@@ -66,7 +64,7 @@ const UseRf = () => {
                 required
             />
             <br />
-            <p>Ref Object current val, doesn't change betweeen renders.</p>
+            <p>Ref Object current val, doesn't change between renders.</p>
             <h2 className="y">Previous value: {prevInpVal.current}</h2>
             <br />
             <code>
@@ -88,9 +86,9 @@ useEffect(() => {
 <input type="button" onMouseUp={() => stopCount()} value="stop" />
 
 # Focus
-const txtinp = useRef<HTMLInputElement>(null!) // get the ref input element
+const txtinp = useRef<HTMLInputElement>(null!)
 const focusX = () => {
-    txtinp.current.focus() // on btn click, focus on text input
+    txtinp.current.focus()
     txtinp.current.value = "" // reset the text input value
 }
 <input type="button" onMouseUp={focusX} value="btn" />
@@ -101,7 +99,7 @@ const [inpVal, setInputValue] = useState("")
 const iChange = (e: { target: { value: string } }) => {
     setInputValue(e.target.value)
     // do more stuff... change color... etc...
-    // just stopping the count from above, so no re-render:
+    // stop the count from above, so no re-render:
     if (refVal.current) window.clearInterval(refVal.current)
 }
 // target the ref input element: "Object {current: value}"
