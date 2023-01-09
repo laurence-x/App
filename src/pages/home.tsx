@@ -17,12 +17,24 @@ export default function Home() {
         )
     }, [ iSrcV ])
 
+    const goGH = () => {
+        window.open(
+            "https://github.com/laurence-x",
+            "_blank",
+            "noopener,noreferrer"
+        )
+    }
+
     return (
         <>
-            <br />
             <p className="c y">
                 {usr?.st ? `Hi ${usr?.nm}!` : `Go ahead, register & log in!`}
             </p>
+            <br />
+            <div className="c cp" onClick={goGH}>
+                <img src="../assets/images/gh.png" alt="GitHub"></img>
+                <p className="c g">App source code on GitHub</p>
+            </div>
             <br />
             {entries.map((i) => (
                 <div className="hI" key={i.e_nm}>

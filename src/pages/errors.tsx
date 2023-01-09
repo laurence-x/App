@@ -14,12 +14,8 @@ export default function Errors(p: { page: string }) {
         const controller = new AbortController()
         let fData = new URLSearchParams()
         fData.append("err", eData)
-        //TODO: fully re-test
         fetch("../php/errors.php", {
             method: "POST",
-            headers: {
-                'Content-type': 'application/json'
-            },
             body: fData,
             signal: controller.signal,
         }).catch((error) => {
@@ -30,20 +26,21 @@ export default function Errors(p: { page: string }) {
 
     return (
         <>
+            <b className="r">Error</b>
+            <br />
+            <br />
             {error && (
-                <br>
-                    <b className="r">Error</b>
-                    <br />
+                <div>
                     <p className="y">Path:</p>
                     <p>{p.page}</p>
                     <p className="y">Status:</p>
                     <p>{error.status}</p>
                     <p>{error.statusText}</p>
-                    <p className="y">Messsage:</p>
+                    <p className="y">Message:</p>
                     <p>{error.message}</p>
                     <p className="y">Data:</p>
                     <p>{error.data}</p>
-                </br>
+                </div>
             )}
             {state && <p className="y c">{state.r}</p>}
             <Redir

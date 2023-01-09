@@ -248,6 +248,11 @@ html::-webkit-scrollbar-button,
 
 /* --------------------------------- CLASSES -------------------------------- */
 
+.cp:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
 .show {
     display: block;
     transition: 0.8s;
