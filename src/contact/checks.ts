@@ -2,7 +2,7 @@ import { checkT } from "types/contactT"
 import send from "./send"
 
 let checks = ({ iN, iT, iE, iE2, tA, ms, iB, rD, nvg }: checkT) => {
-	iB.current && (iB.current.style.visibility = "hidden") // hide btn
+	iB.current && (iB.current.style.visibility = "hidden")
 
 	for (let el of [ iN, iT, iE, iE2, tA ]) {
 		// minimum lenght check
