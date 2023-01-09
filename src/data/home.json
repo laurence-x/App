@@ -1,0 +1,127 @@
+[
+	{
+		"e_nm": "Singleton",
+		"e_ds": "create an immutable object",
+		"e_lk": "dps/singleton"
+	},
+	{
+		"e_nm": "Factorial",
+		"e_ds": "return objects that share properties",
+		"e_lk": "dps/factorial"
+	},
+	{
+		"e_nm": "Prototype",
+		"e_ds": "a new obj based on anotherone's attributes",
+		"e_lk": "dps/prototype"
+	},
+	{
+		"e_nm": "Observer",
+		"e_ds": "a function watching out for changes",
+		"e_lk": "dps/observer"
+	},
+	{
+		"e_nm": "Adapter",
+		"e_ds": "incompatible objects interactions",
+		"e_lk": "dps/adapter"
+	},
+	{
+		"e_nm": "Decorator",
+		"e_ds": "wrap objects and manipulate them",
+		"e_lk": "dps/decorator"
+	},
+	{
+		"e_nm": "MVC",
+		"e_ds": "split the app into Model, View, Controller",
+		"e_lk": "dps/mvc"
+	},
+	{
+		"e_nm": "Object map vs Switch",
+		"e_ds": "no more use of switch statements",
+		"e_lk": "bps/objswitch"
+	},
+	{
+		"e_nm": "JSX & Functions",
+		"e_ds": "no functions inside JSX",
+		"e_lk": "bps/jsxfns"
+	},
+	{
+		"e_nm": "Object destructuring",
+		"e_ds": "quick way to pass multiple props",
+		"e_lk": "bps/objDestruct"
+	},
+	{
+		"e_nm": "Code splitting",
+		"e_ds": "import a data only when needed",
+		"e_lk": "bps/codeSplit"
+	},
+	{
+		"e_nm": "useContext",
+		"e_ds": "to pass data between components",
+		"e_lk": "hks/useCtx"
+	},
+	{
+		"e_nm": "useRef",
+		"e_ds": "use to target a specific element",
+		"e_lk": "hks/useRf"
+	},
+	{
+		"e_nm": "useId",
+		"e_ds": "to generate unique id's",
+		"e_lk": "hks/useID"
+	},
+	{
+		"e_nm": "useParams",
+		"e_ds": "get route path parameters",
+		"e_lk": "hks/usePrm"
+	},
+	{
+		"e_nm": "useSearchParams",
+		"e_ds": "get & set url parameters",
+		"e_lk": "hks/useSrcPrm"
+	},
+	{
+		"e_nm": "useLocation",
+		"e_ds": "access various url parameters",
+		"e_lk": "hks/useLoc?nm=Mike&ag=24#abc"
+	},
+	{
+		"e_nm": "useNavigate",
+		"e_ds": "navigate the history stack or pass data to the next route",
+		"e_lk": "hks/useNvt"
+	},
+	{
+		"e_nm": "useNavigation",
+		"e_ds": "build pending navigation indicators",
+		"e_lk": "hks/useNvg"
+	},
+	{
+		"e_nm": "useEffect",
+		"e_ds": "execute a fn on mount or dependency change",
+		"e_lk": "hks/useEff"
+	},
+	{
+		"e_nm": "useState",
+		"e_ds": "simple state management solution",
+		"e_lk": "hks/useStt"
+	},
+	{
+		"e_nm": "useTransition",
+		"e_ds": "show a message while getting some data",
+		"e_lk": "hks/useTrs"
+	},
+	{
+		"e_nm": "useReducer",
+		"e_ds": "when the next state depends on the previous",
+		"e_lk": "hks/useRdc"
+	},
+	{
+		"e_nm": "useCallback",
+		"e_ds": "memoize a fn, not its result",
+		"e_lk": "hks/useCbk"
+	},
+	{
+		"e_nm": "useMemo",
+		"e_ds": "memoize the result of a Fn",
+		"e_lk": "hks/useMem"
+	}
+]
