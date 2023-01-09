@@ -32,7 +32,7 @@ export default function Home() {
             </p>
             <br />
             <div className="c cp" onClick={goGH}>
-                <img src="../assets/images/gh.png" alt="GitHub"></img>
+                <img src="../images/gh.png" alt="GitHub"></img>
                 <p className="c g">App source code on GitHub</p>
             </div>
             <br />
