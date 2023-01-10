@@ -16,24 +16,21 @@ export default async function preCheck(
             r === "rd" && window.open("https://www.google.com", "_self")
             if (r === "e") {
                 rD.current && (rD.current.textContent = "try again later")
-                const timer = setTimeout(() => {
+                setTimeout(() => {
                     nvg("/login")
                 }, 8000)
-                clearTimeout(timer)
             }
             if (r === "ex") {
                 rD.current && (rD.current.textContent = "try resetting again")
-                const timer = setTimeout(() => {
+                setTimeout(() => {
                     nvg("/rec")
                 }, 8000)
-                clearTimeout(timer)
             }
             if (r === "nc") {
                 rD.current && (rD.current.textContent = "recover again")
-                const timer = setTimeout(() => {
+                setTimeout(() => {
                     nvg("/rec")
                 }, 6000)
-                clearTimeout(timer)
             }
         })
         .catch((error) => {

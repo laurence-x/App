@@ -15,17 +15,15 @@ export default async function send({ Em, ms, rD, nvg }: sendT) {
 		.then((r) => {
 			if (r === "bk") {
 				rD.current && (rD.current.textContent = "please contact us")
-				const timer = setTimeout(() => {
-					nvg("/")
-				}, 10000)
-				clearTimeout(timer)
+				setTimeout(() => {
+					nvg("/contact")
+				}, 6000)
 			}
 			if (r === "e") {
-				rD.current && (rD.current.textContent = "error occurred")
-				const timer = setTimeout(() => {
+				rD.current && (rD.current.textContent = "an error occurred")
+				setTimeout(() => {
 					nvg("/")
-				}, 10000)
-				clearTimeout(timer)
+				}, 6000)
 			}
 			if (r === "no") {
 				ms.current && (ms.current.textContent = "no valid user email")
@@ -34,10 +32,9 @@ export default async function send({ Em, ms, rD, nvg }: sendT) {
 			}
 			if (r === "rs") {
 				rD.current && (rD.current.textContent = "reset email sent")
-				const timer = setTimeout(() => {
+				setTimeout(() => {
 					nvg("/")
-				}, 10000)
-				clearTimeout(timer)
+				}, 6000)
 			}
 		})
 		.catch((error) => {

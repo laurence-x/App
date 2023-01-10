@@ -16,10 +16,9 @@ export default async function send({ Nm, Em, Pw, ms, rD, nvg }: sendT) {
 		.then((r) => {
 			if (r === "e") {
 				rD.current && (rD.current.textContent = "an error occurred")
-				const timer = setTimeout(() => {
+				setTimeout(() => {
 					nvg("/")
-				}, 10000)
-				clearTimeout(timer)
+				}, 6000)
 			}
 			if (r === "ux") {
 				ms.current &&
@@ -29,10 +28,9 @@ export default async function send({ Nm, Em, Pw, ms, rD, nvg }: sendT) {
 			}
 			if (r === "uc") {
 				rD.current && (rD.current.textContent = "account created")
-				const timer = setTimeout(() => {
+				setTimeout(() => {
 					nvg("/login")
 				}, 6000)
-				clearTimeout(timer)
 			}
 		})
 		.catch((error) => {

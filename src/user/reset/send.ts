@@ -18,24 +18,21 @@ export default async function send({ Pw, Pw2, rD, nvg, hdc }: sendT) {
 			r === "rD" && window.open("https://google.com", "_self")
 			if (r === "e") {
 				rD.current && (rD.current.textContent = "some error occurred")
-				const timer = setTimeout(() => {
+				setTimeout(() => {
 					nvg("/")
-				}, 10000)
-				clearTimeout(timer)
+				}, 6000)
 			}
 			if (r === "ex") {
 				rD.current && (rD.current.textContent = "reset again")
-				const timer = setTimeout(() => {
+				setTimeout(() => {
 					nvg("/rec")
 				}, 6000)
-				clearTimeout(timer)
 			}
 			if (r === "rs") {
 				rD.current && (rD.current.textContent = "password reset")
-				const timer = setTimeout(() => {
+				setTimeout(() => {
 					nvg("/login")
-				}, 10000)
-				clearTimeout(timer)
+				}, 6000)
 			}
 		})
 		.catch((error) => {

@@ -17,17 +17,15 @@ export default async function send({ Em, Pw, ms, rD, nvg }: sendT) {
 		.then((r) => {
 			if (r === "bk") {
 				rD.current && (rD.current.textContent = "blocked for 24h")
-				const timer = setTimeout(() => {
+				setTimeout(() => {
 					nvg("/")
-				}, 10000)
-				clearTimeout(timer)
+				}, 8000)
 			}
 			if (r === "e") {
 				rD.current && (rD.current.textContent = "some error occurred")
-				const timer = setTimeout(() => {
+				setTimeout(() => {
 					nvg("/")
-				}, 10000)
-				clearTimeout(timer)
+				}, 6000)
 			}
 			if (r === "no") {
 				ms.current && (ms.current.textContent = "not a valid user")
@@ -41,17 +39,15 @@ export default async function send({ Em, Pw, ms, rD, nvg }: sendT) {
 			}
 			if (r === "rc") {
 				rD.current && (rD.current.textContent = "recover password")
-				const timer = setTimeout(() => {
+				setTimeout(() => {
 					nvg("/rec")
 				}, 6000)
-				clearTimeout(timer)
 			}
 			if (r === "lo") {
 				rD.current && (rD.current.textContent = "logged")
-				const timer = setTimeout(() => {
+				setTimeout(() => {
 					nvg("/")
 				}, 2000)
-				clearTimeout(timer)
 			}
 		})
 		.catch((error) => {
