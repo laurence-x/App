@@ -44,7 +44,7 @@ export default function Errors(p: { page: string }) {
             )}
             {state && <p className="y c">{state.r}</p>}
             <Redir
-                navData={{
+                pd={{
                     go: "",
                     tm: 20,
                 }}

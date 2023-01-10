@@ -2,22 +2,23 @@ import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 
 const UseNvt = () => {
-    const navigate = useNavigate()
+    const nvg = useNavigate()
 
     useEffect(() => {
-        setTimeout(() => {
-            navigate("/")
+        const timer = setTimeout(() => {
+            nvg("/")
         }, 300000)
-    }, [ navigate ])
+        return () => clearTimeout(timer)
+    }, [ nvg ])
 
-    const back = () => navigate(-1) // on step back in the history stack
+    const back = () => nvg(-1) // on step back in the history stack
 
     const goto = () =>
-        navigate("/hks/useLoc?nm=Mike&ag=24#abc", {
+        nvg("/hks/useLoc?nm=Mike&ag=24#abc", {
             // true: on back click, this page won't be in history anymore
             replace: false,
             // pass to the next route, an object containing parameter
-            // state key is accesible with the useLocation hook on next page
+            // state key is accessible with the useLocation hook on next page
             state: { xxx: "yyy", zzz: 22 },
             // state: { ex: props.page }, // pass to next route
         })
@@ -40,13 +41,13 @@ const UseNvt = () => {
             <br />
             <code>
                 <pre>{`
-const navigate = useNavigate()
+const nvg = useNavigate()
 
-const back = () => navigate(-1) // one step back in the history stack
+const back = () => nvg(-1) // one step back in the history stack
 <input type="button" value="back" onMouseUp={back} />
 
 const goto = () =>
-    navigate("/hks/useLoc?nm=Mike&ag=24#abc", {
+    nvg("/hks/useLoc?nm=Mike&ag=24#abc", {
         // replace the current history stack entry with this one
         replace: true,
         // pass to the next route, an object containing parameter

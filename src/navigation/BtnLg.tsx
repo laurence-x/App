@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom"
 import { UCX } from "../contexts/mainCTX"
 import cookieDel from "../fns/cookieDel"
 
-export default function LgBtn() {
-    const nav = useNavigate()
+const LgBtn = () => {
+    const nvg = useNavigate()
     const { usr, setUsr } = UCX()
 
     const lgOut = () => {
@@ -12,12 +12,12 @@ export default function LgBtn() {
         cookieDel([ "vic", "t", "q", "esd", "cc" ])
         const timer = setTimeout(() => {
             setUsr({ nm: false, st: false })
-            nav("/")
+            nvg("/")
         }, 800)
         return () => clearTimeout(timer)
     }
 
-    const lgIn = () => nav("/login")
+    const lgIn = () => nvg("/login")
 
     return (
         <div>
@@ -31,3 +31,5 @@ export default function LgBtn() {
         </div>
     )
 }
+
+export default LgBtn
