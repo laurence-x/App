@@ -8,6 +8,7 @@ export default function Lgd() {
 	const nav = useNavigate()
 	const [ lstat, setLstat ] = useState<string>()
 	let lg = gck("lg")
+
 	useEffect(() => {
 		const controller = new AbortController()
 		if (lg) {
@@ -31,8 +32,12 @@ export default function Lgd() {
 					console.log("Error Logged: ", e)
 					nav("/errors", { state: { r: "lgd catch err" } })
 				})
+		} else {
+			setLstat("no")
 		}
+
 		return () => controller.abort()
 	}, [ lg, nav, setUsr ])
+
 	return lstat
 }

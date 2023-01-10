@@ -1,22 +1,23 @@
 import { useEffect } from "react"
-import { useLocation, useNavigate } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 
+import { UCX } from "contexts/mainCTX"
 import cookieDel from "../fns/cookieDel"
 
 const AutoOut = () => {
-    const nvg = useNavigate()
     const { pathname } = useLocation()
+    const { setUsr } = UCX()
 
     useEffect(() => {
         // auto log-out after 15 minutes of inactivity
         const timer = setTimeout(() => {
-            // delete all cockies, except:
+            // delete all cookies, except:
             cookieDel([ "vic", "t", "q", "esd", "cc" ])
-            nvg("/")
+            setUsr({ nm: false, st: false })
         }, 15 * 60 * 1000)
 
         return () => clearTimeout(timer)
-    }, [ pathname, nvg ])
+    }, [pathname, setUsr])
 
     return null
 }

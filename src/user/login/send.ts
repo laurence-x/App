@@ -22,7 +22,7 @@ export default async function send({ Em, Pw, ms, rD, nvg }: sendT) {
 				}, 10000)
 			}
 			if (r === "e") {
-				rD.current && (rD.current.textContent = "some error occured")
+				rD.current && (rD.current.textContent = "some error occurred")
 				setTimeout(() => {
 					nvg("/")
 				}, 10000)

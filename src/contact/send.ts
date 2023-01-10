@@ -22,9 +22,11 @@ const send = async ({ iN, iT, iE, tA, rD, nvg }: sendT) => {
 						? "try again in 1h"
 						: "an error occurred"
 			rD.current && (rD.current.textContent = mess)
-			setTimeout(() => {
+			const timer = setTimeout(() => {
 				nvg("/")
-			}, 10000)
+			}, 6000)
+			return () => clearTimeout(timer)
+			//TODO: clear time out for all where setTimeout
 		})
 		.catch((error) => {
 			rD.current && (rD.current.textContent = "try again later")

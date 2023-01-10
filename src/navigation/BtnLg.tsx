@@ -5,12 +5,16 @@ import cookieDel from "../fns/cookieDel"
 
 export default function LgBtn() {
     const nav = useNavigate()
-    const { usr } = UCX()
+    const { usr, setUsr } = UCX()
 
     const lgOut = () => {
         //~ cookies to keep after log out:
         cookieDel([ "vic", "t", "q", "esd", "cc" ])
-        nav("/")
+        const timer = setTimeout(() => {
+            setUsr({ nm: false, st: false })
+            nav("/")
+        }, 800)
+        return () => clearTimeout(timer)
     }
 
     const lgIn = () => nav("/login")
