@@ -38,7 +38,7 @@ const UseRf = () => {
     return (
         <>
             <h1 className="g">useRef</h1>
-            <p>Use to store a reference to a value.</p>
+            <p>Use to store a reference to a value & access the dom directly.</p>
             <br />
             <b className="y">{number}</b>
             <input

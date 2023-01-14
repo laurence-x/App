@@ -5,7 +5,7 @@ let checks = ({ iN, iT, iE, iE2, tA, ms, iB, rD, nvg }: checkT) => {
 	iB.current && (iB.current.style.visibility = "hidden")
 
 	for (let el of [ iN, iT, iE, iE2, tA ]) {
-		// minimum lenght check
+		// minimum length check
 		const ell = Number(el.current?.value.length)
 		const min = Number(el.current?.minLength)
 		if (ell < min) {
