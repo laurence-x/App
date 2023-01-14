@@ -17,40 +17,47 @@ export default function Recovery() {
 	const btn = () => checks({ Em, Em2, ms, iB, rD, nvg })
 
 	return (
-		<>
-			<CapsOn />
-			<b className="h">Recovery</b>
-			<div className="l c" ref={rD}>
-				<input
-					type="email"
-					name="email"
-					ref={Em}
-					onKeyUp={kup}
-					placeholder="type your email..."
-					title="type your email"
-					pattern=".{5,40}"
-					minLength={Number(5)}
-					maxLength={Number(40)}
-					autoComplete="off"
-					required
-				/>
-				<br />
-				<input
-					type="email"
-					ref={Em2}
-					onKeyUp={kup}
-					placeholder="re-type your email..."
-					title="type your email"
-					pattern=".{5,40}"
-					minLength={Number(5)}
-					maxLength={Number(40)}
-					autoComplete="off"
-					required
-				/>
-				<br />
-				<b ref={ms} className="hide c r"></b>
-				<input type="button" ref={iB} value="check" onMouseUp={btn} />
+		<div className="cM">
+			<div className="cC">
+				<CapsOn />
+				<b className="h">Recovery</b>
+				<div className="l c" ref={rD}>
+					<input
+						type="email"
+						name="email"
+						ref={Em}
+						onKeyUp={kup}
+						placeholder="type your email..."
+						title="type your email"
+						pattern=".{5,40}"
+						minLength={Number(5)}
+						maxLength={Number(40)}
+						autoComplete="off"
+						required
+					/>
+					<br />
+					<input
+						type="email"
+						ref={Em2}
+						onKeyUp={kup}
+						placeholder="re-type your email..."
+						title="type your email"
+						pattern=".{5,40}"
+						minLength={Number(5)}
+						maxLength={Number(40)}
+						autoComplete="off"
+						required
+					/>
+					<br />
+					<b ref={ms} className="hide c r"></b>
+					<input
+						type="button"
+						ref={iB}
+						value="check"
+						onMouseUp={btn}
+					/>
+				</div>
 			</div>
-		</>
+		</div>
 	)
 }
