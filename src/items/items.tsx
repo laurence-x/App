@@ -1,21 +1,37 @@
-import { useMemo } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+
 import { UCX } from "../contexts/mainCTX"
 import iList from "./iList"
 
 const Items = () => {
     const { iSrcV, iToCart } = UCX()
+    const [ its, setIts ] = useState(iList)
     const nvg = useNavigate()
 
-    const selection = useMemo(() => {
-        return iList.filter((i) =>
+    useEffect(() => {
+        setIts(iList.filter((i) =>
             i.p_nm?.toLowerCase().includes(iSrcV.toLowerCase())
-        )
+        ))
     }, [ iSrcV ])
+
+    const sortI = (e: { target: { value: string } }) => {
+        const s: string = e.target.value
+        const sIts = [ ...its ]
+        s === "asc" && setIts(sIts.sort((a, b) => a.p_pr - b.p_pr))
+        s === "desc" && setIts(sIts.sort((a, b) => b.p_pr - a.p_pr))
+        s === "default" && setIts(iList)
+    }
 
     return (
         <>
-            {selection.map((i) => (
+            <select onChange={sortI} className="c m">
+                <option value="default">default</option>
+                <option value="asc">cheapest</option>
+                <option value="desc">expensive</option>
+            </select>
+            <br />
+            {its.map((i) => (
                 <div className="item x c" key={i.p_id}>
                     <h2 className="y c">{i.p_nm}</h2>
                     <br />
