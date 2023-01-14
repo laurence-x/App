@@ -10,25 +10,29 @@ const Items = () => {
     const nvg = useNavigate()
 
     useMemo(() => {
-        setIts(iList.filter((i) =>
-            i.p_nm?.toLowerCase().includes(iSrcV.toLowerCase())
-        ))
+        setIts(
+            iList.filter((i) =>
+                i.p_nm?.toLowerCase().includes(iSrcV.toLowerCase())
+            )
+        )
     }, [ iSrcV ])
 
     const sortI = (e: { target: { value: string } }) => {
         const s: string = e.target.value
         const sIts = [ ...its ]
-        s === "default" && setIts(iList)
-        s === "asc" && setIts(sIts.sort((a, b) => a.p_pr - b.p_pr))
-        s === "desc" && setIts(sIts.sort((a, b) => b.p_pr - a.p_pr))
+        s === "d" && setIts(iList)
+        s === "c" && setIts(sIts.sort((a, b) => a.p_pr - b.p_pr))
+        s === "e" && setIts(sIts.sort((a, b) => b.p_pr - a.p_pr))
+        s === "n" && setIts(sIts.sort((a, b) => a.p_nm.localeCompare(b.p_nm)))
     }
 
     return (
         <>
             <select onChange={sortI} className="c m">
-                <option value="default">default</option>
-                <option value="asc">cheapest</option>
-                <option value="desc">expensive</option>
+                <option value="d">default</option>
+                <option value="n">by name</option>
+                <option value="c">cheapest</option>
+                <option value="e">expensive</option>
             </select>
             <br />
             {its.map((i) => (
