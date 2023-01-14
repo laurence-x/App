@@ -72,10 +72,10 @@
   // exclude JS files generated from both .ts and .tsx source files:
   "files.exclude": {
     "**/*.js": {
-      "when": "$(basename).ts"
+      "when": "$(some_name).ts"
     },
     "**/**.js": {
-      "when": "$(basename).tsx"
+      "when": "$(some_name).tsx"
     }
   }
 }
