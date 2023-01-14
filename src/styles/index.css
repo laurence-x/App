@@ -2,19 +2,19 @@
 
 /* @import url("http://fonts.cdnfonts.com/css/neucha"); */
 @font-face {
-    font-family: 'Neucha';
+    font-family: "Neucha";
     font-style: normal;
     font-weight: 400;
-    src: local('Neucha'), url(../assets/fonts/Neucha.woff) format('woff');
+    src: local("Neucha"), url(../assets/fonts/Neucha.woff) format("woff");
     /* src: local('Neucha'), url(https://fonts.cdnfonts.com/s/5201/neucha.woff) format('woff') */
 }
 
 /* @import url("https://fonts.cdnfonts.com/css/jetbrains-mono"); */
 @font-face {
-    font-family: 'Jetbrains';
+    font-family: "Jetbrains";
     font-style: normal;
     font-weight: 400;
-    src: local('Share Tech'), url(../assets/fonts/Jetbrains.woff) format('woff');
+    src: local("Share Tech"), url(../assets/fonts/Jetbrains.woff) format("woff");
     /* src: local('JetBrains Mono'),
     url(https://fonts.cdnfonts.com/s/36131/JetbrainsMonoRegular-RpvmM.woff)
     format('woff'); */
@@ -468,12 +468,10 @@ option {
 select {
     display: block;
     width: 100%;
-    font-size: 2rem;
-    margin: 0;
-    padding: 0 0 0 1rem;
+    height: 2.8rem;
     box-sizing: border-box;
     border: none;
-    border-bottom: 0.08rem solid var(--b);
+    border-bottom: 0.02rem solid var(--bk);
     border-radius: 0;
     -webkit-border-radius: 0;
     box-shadow: none;
@@ -494,10 +492,12 @@ select:active {
     box-shadow: none;
 }
 
+select:focus,
 select:required:focus {
     box-shadow: none;
 }
 
+select:valid,
 select:required:valid {
     box-shadow: none;
 }
