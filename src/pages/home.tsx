@@ -8,7 +8,6 @@ export default function Home() {
     const { usr, iSrcV } = UCX()
     const nvg = useNavigate()
 
-    // check if name & description include the input search value
     const entries = useMemo(() => {
         return list.filter((i) =>
             [ i.e_nm.toLowerCase(), i.e_ds.toLowerCase() ].some((i) =>

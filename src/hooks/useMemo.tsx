@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 
 const UseMem = () => {
     const [ nr1, setNr1 ] = useState(0)
@@ -6,7 +6,7 @@ const UseMem = () => {
 
     const Fn = (n: number) => {
         n += 1
-        return "useMomo Fn executed: " + n
+        return "useMemo Fn executed: " + n
     }
 
     const res = useMemo(() => Fn(nr2), [ nr2 ])
@@ -30,7 +30,7 @@ const UseMem = () => {
             <pre className="r">{`const res = useMemo(() => fn(n), [d])`}</pre>
             <br />
             <p>
-                Each button displays it's own count, while the useMome hook
+                Each button displays it's own count, while the useMemo hook
                 count in between them, starts at 1.
             </p>
             <p>
