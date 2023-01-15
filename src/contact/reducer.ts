@@ -1,12 +1,15 @@
 import { ActTps } from "./atypes"
 
-export const iniState = {
+export const initialStt = {
 	loading: false,
 	result: "",
 	error: false,
 }
 
-export const reducer = (state: any, action: { type: any; payload: any }) => {
+export const reducer = (
+	state: any,
+	action: { type: any; payload?: string }
+) => {
 	switch (action.type) {
 		case ActTps.fnRun:
 			return {
@@ -16,14 +19,14 @@ export const reducer = (state: any, action: { type: any; payload: any }) => {
 		case ActTps.fnOky:
 			return {
 				loading: false,
-				state, // ...state,
+				state, // ...state, // if json
 				result: action.payload,
 			}
 		case ActTps.fnErr:
 			return {
 				loading: false,
 				error: true,
-				result: false,
+				result: action.payload,
 			}
 		default:
 			return {

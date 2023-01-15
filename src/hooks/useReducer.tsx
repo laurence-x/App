@@ -1,21 +1,21 @@
 import { useReducer } from "react"
 import { TpAct, TpStt } from "../types/uReducerT"
 
-const iniStt = { val: 0 }
+const initialStt = { val: 0 }
 
-const rdcFn = (stt: TpStt, act: TpAct) => {
+const reducer = (state: TpStt, action: TpAct) => {
     const opt = {
-        inc: { val: stt.val + act.data! },
-        dec: { val: stt.val - act.data! },
-        res: iniStt,
-        NOT_FOUND: stt,
+        inc: { val: state.val + action.payload! },
+        dec: { val: state.val - action.payload! },
+        res: initialStt,
+        NOT_FOUND: state,
     }
-    return opt[ act.tp ]
+    return opt[ action.type ]
 }
 
 const UseRdc = () => {
-    const [ sttX, dspX ] = useReducer(rdcFn, iniStt)
-    const [ sttY, dspY ] = useReducer(rdcFn, iniStt)
+    const [ stateX, dispatchX ] = useReducer(reducer, initialStt)
+    const [ stateY, dispatchY ] = useReducer(reducer, initialStt)
 
     return (
         <>
@@ -24,109 +24,109 @@ const UseRdc = () => {
             <br />
             <p className="g">Syntax:</p>
             <pre className="r">
-                {`const [state, dispatch] = useReducer(reducerFn, initialState)`}
+                {`const [state, dispatch] = useReducer(reducer, initialState)`}
             </pre>
             <br />
             <input
                 type="button"
                 className="m"
                 value="+100"
-                onMouseUp={() => dspX({ tp: "inc", data: 100 })}
+                onMouseUp={() => dispatchX({ type: "inc", payload: 100 })}
             />
-            <b className="y">{sttX.val}</b>
+            <b className="y">{stateX.val}</b>
             <input
                 type="button"
                 className="m"
                 value="-100"
-                onMouseUp={() => dspX({ tp: "dec", data: 100 })}
+                onMouseUp={() => dispatchX({ type: "dec", payload: 100 })}
             />
             <br />
             <input
                 type="button"
                 className="m"
                 value="res"
-                onMouseUp={() => dspX({ tp: "res" })}
+                onMouseUp={() => dispatchX({ type: "res" })}
             />
             <br />
-            <p className="c">one reducerFn for both cases</p>
+            <p className="c">one reducer for both cases</p>
             <br />
             <input
                 type="button"
                 className="m"
                 value="+100"
-                onMouseUp={() => dspY({ tp: "inc", data: 100 })}
+                onMouseUp={() => dispatchY({ type: "inc", payload: 100 })}
             />
-            <b className="y">{sttY.val}</b>
+            <b className="y">{stateY.val}</b>
             <input
                 type="button"
                 className="m"
                 value="-100"
-                onMouseUp={() => dspY({ tp: "dec", data: 100 })}
+                onMouseUp={() => dispatchY({ type: "dec", payload: 100 })}
             />
             <br />
             <input
                 type="button"
                 className="m"
                 value="res"
-                onMouseUp={() => dspY({ tp: "res" })}
+                onMouseUp={() => dispatchY({ type: "res" })}
             />
             <br />
             <code>
                 <pre>{`
 import React, { useReducer } from "react"
-const iniStt = { val: 0 }
+const initialStt = { val: 0 }
 interface TpStt {
     val: number
 }
-const rdcFn = (stt: TpStt, act: TpAct) => {
+const reducer = (state: TpStt, action: TpAct) => {
     const opt = {
-        inc: { val: stt.val + act.data! },
-        dec: { val: stt.val - act.data! },
-        res: iniStt,
-        NOT_FOUND: stt,
+        inc: { val: state.val + action.payload! },
+        dec: { val: state.val - action.payload! },
+        res: initialStt,
+        NOT_FOUND: state,
     }
-    return opt[act.tp]
+    return opt[action.type]
 }
 const UseRdc = () => {
-    const [sttX, dspX] = useReducer(rdcFn, iniStt)
-    const [sttY, dspY] = useReducer(rdcFn, iniStt)
+    const [stateX, dispatchX] = useReducer(reducer, initialStt)
+    const [stateY, dispatchY] = useReducer(reducer, initialStt)
     return (
         <>
             <input
                 type="button"
                 value="+100"
-                onMouseUp={() => dspX({ tp: "inc", data: 100 })}
+                onMouseUp={() => dispatchX({ type: "inc", payload: 100 })}
             />
-            <b>{sttX.val}</b>
+            <b>{stateX.val}</b>
             <input
                 type="button"
                 value="-100"
-                onMouseUp={() => dspX({ tp: "dec", data: 100 })}
+                onMouseUp={() => dispatchX({ type: "dec", payload: 100 })}
             />
             <br />
             <input
                 type="button"
                 value="res"
-                onMouseUp={() => dspX({ tp: "res" })}
+                onMouseUp={() => dispatchX({ type: "res" })}
             />
             <br />
             <br />
             <input
                 type="button"
                 value="+100"
-                onMouseUp={() => dspY({ tp: "inc", data: 100 })}
+                onMouseUp={() => dispatchY({ type: "inc", payload: 100 })}
             />
-            <b>{sttY.val}</b>
+            <b>{stateY.val}</b>
             <input
                 type="button"
                 value="-100"
-                onMouseUp={() => dspY({ tp: "dec", data: 100 })}
+                onMouseUp={() => dispatchY({ type: "dec", payload: 100 })}
             />
             <br />
             <input
                 type="button"
                 value="res"
-                onMouseUp={() => dspY({ tp: "res" })}
+                onMouseUp={() => dispatchY({ type: "res" })}
             />
         </>
     )

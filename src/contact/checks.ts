@@ -1,6 +1,5 @@
 import { checkT } from "types/contactT"
 export default function checks({ iN, iT, iE, iE2, tA, ms }: checkT) {
-
 	for (let el of [ iN, iT, iE, iE2, tA ]) {
 		// minimum length check
 		const ell = Number(el.current?.value.length)

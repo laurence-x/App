@@ -8,7 +8,7 @@ import KeyupTx from "./keyupTx"
 
 import { ActTps } from "./atypes"
 import checks from "./checks"
-import { iniState, reducer } from "./reducer"
+import { initialStt, reducer } from "./reducer"
 
 export default function Contact() {
     const iN = useRef<HTMLInputElement>(null!)
@@ -19,7 +19,7 @@ export default function Contact() {
     const ms = useRef<HTMLParagraphElement>(null!)
     const iB = useRef<HTMLInputElement>(null!)
     const rD = useRef<HTMLDivElement>(null!)
-    const [ state, dispatch ] = useReducer(reducer, iniState)
+    const [ state, dispatch ] = useReducer(reducer, initialStt)
     const nvg = useNavigate()
 
     const kupNm = () => BtnMsg(ms, iB)
@@ -33,7 +33,6 @@ export default function Contact() {
         if (checks({ iN, iT, iE, iE2, tA, ms })) {
             dispatch({
                 type: ActTps.fnRun,
-                payload: undefined,
             })
 
             let frmDta = new FormData()
