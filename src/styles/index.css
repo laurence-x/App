@@ -20,6 +20,8 @@
     format('woff'); */
 }
 
+/* --------------------------------- COLORS --------------------------------- */
+
 :root {
     --bl: #22a;
     --r: #a22;
@@ -27,8 +29,6 @@
     --y: #aa2;
     --w: #aaa;
 }
-
-/* --------------------------------- COLORS --------------------------------- */
 
 .b {
     color: var(--b);
@@ -48,6 +48,77 @@
 
 .bl {
     color: var(--bl);
+}
+
+/* --------------------------------- CLASSES -------------------------------- */
+
+.cp:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.show {
+    display: block;
+    transition: 0.8s;
+}
+
+.hide {
+    display: none;
+}
+
+.c {
+    text-align: center;
+}
+
+.up {
+    text-transform: uppercase;
+}
+
+.m,
+.l,
+.x {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+}
+
+.m {
+    max-width: 28rem;
+}
+
+.l {
+    max-width: 40rem;
+}
+
+.x {
+    max-width: 60rem;
+}
+
+.h {
+    line-height: 10rem;
+}
+
+@media (max-width: 1200px) {
+    .cM {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    .cC {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -khtml-transform: translate(-50%, -50%);
+    }
 }
 
 /* -------------------------------- SCROLLBAR ------------------------------- */
@@ -244,77 +315,6 @@ html::-webkit-scrollbar-button,
     margin: auto;
     bottom: 0;
     right: 0;
-}
-
-/* --------------------------------- CLASSES -------------------------------- */
-
-.cp:hover {
-    cursor: pointer;
-    opacity: 0.6;
-}
-
-.show {
-    display: block;
-    transition: 0.8s;
-}
-
-.hide {
-    display: none;
-}
-
-.c {
-    text-align: center;
-}
-
-.up {
-    text-transform: uppercase;
-}
-
-.m,
-.l,
-.x {
-    display: block;
-    position: relative;
-    margin: 0 auto;
-}
-
-.m {
-    max-width: 28rem;
-}
-
-.l {
-    max-width: 40rem;
-}
-
-.x {
-    max-width: 60rem;
-}
-
-.h {
-    line-height: 10rem;
-}
-
-@media (max-width: 1200px) {
-    .cM {
-        width: 100%;
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-    }
-
-    .cC {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        -webkit-transform: translate(-50%, -50%);
-        -moz-transform: translate(-50%, -50%);
-        -o-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        -khtml-transform: translate(-50%, -50%);
-    }
 }
 
 /* -------------------------------- ELEMENTS -------------------------------- */
