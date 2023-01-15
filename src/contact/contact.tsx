@@ -54,7 +54,7 @@ export default function Contact() {
                     dispatch({ type: ActTps.fnOky, payload: data })
                 })
                 .catch((err) => {
-                    console.error("Err-Contact: ", err)
+                    console.error("Error Contact: ", err)
                     dispatch({
                         type: ActTps.fnErr,
                         payload: err,
@@ -72,15 +72,15 @@ export default function Contact() {
     return (
         <>
             {state.result || state.error ? (
-                <div className="cM">
-                    <div className="cC y">
+                <div className="center">
+                    <div>
                         {state.result}
                         {state.error}
                     </div>
                 </div>
             ) : state.loading ? (
-                <div className="cM">
-                    <div className="cC">sending...</div>
+                <div className="center">
+                    <p>sending...</p>
                 </div>
             ) : (
                 <div className="l c" ref={rD}>

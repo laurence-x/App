@@ -17,8 +17,8 @@ export default function Recovery() {
 	const btn = () => checks({ Em, Em2, ms, iB, rD, nvg })
 
 	return (
-		<div className="cM">
-			<div className="cC">
+		<div className="center">
+			<div>
 				<CapsOn />
 				<b className="h">Recovery</b>
 				<div className="l c" ref={rD}>
