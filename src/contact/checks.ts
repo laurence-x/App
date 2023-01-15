@@ -1,7 +1,5 @@
 import { checkT } from "types/contactT"
-
-const checks = ({ iN, iT, iE, iE2, tA, ms, iB }: checkT) => {
-	iB.current && (iB.current.style.visibility = "hidden")
+export default function checks({ iN, iT, iE, iE2, tA, ms }: checkT) {
 
 	for (let el of [ iN, iT, iE, iE2, tA ]) {
 		// minimum length check
@@ -11,7 +9,7 @@ const checks = ({ iN, iT, iE, iE2, tA, ms, iB }: checkT) => {
 			ms.current && (ms.current.style.display = "block")
 			ms.current && (ms.current.textContent = `minimum ${min} chars`)
 			el.current?.focus()
-			return
+			return false
 		}
 		// remove potentially dangerous chars
 		el.current?.value &&
@@ -26,7 +24,7 @@ const checks = ({ iN, iT, iE, iE2, tA, ms, iB }: checkT) => {
 		ms.current && (ms.current.style.display = "block")
 		ms.current && (ms.current.textContent = "email not valid")
 		iE.current?.focus()
-		return
+		return false
 	}
 
 	// equal email values check
@@ -34,8 +32,8 @@ const checks = ({ iN, iT, iE, iE2, tA, ms, iB }: checkT) => {
 		ms.current && (ms.current.style.display = "block")
 		ms.current && (ms.current.textContent = "emails not equal")
 		iE2.current?.focus()
-		return
+		return false
 	}
-}
 
-export default checks
+	return true
+}

@@ -18,5 +18,4 @@ export type checkT = {
 	iE2: React.RefObject<HTMLInputElement>
 	tA: React.RefObject<HTMLTextAreaElement>
 	ms: React.RefObject<HTMLParagraphElement>
-	iB: React.RefObject<HTMLInputElement>
 }

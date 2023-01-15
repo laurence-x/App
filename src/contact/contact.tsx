@@ -29,42 +29,44 @@ export default function Contact() {
 
     const btn = async () => {
         iB.current && (iB.current.style.visibility = "hidden")
-        checks({ iN, iT, iE, iE2, tA, ms, iB })
 
-        dispatch({
-            type: ActTps.fnRun,
-            payload: undefined,
-        })
-
-        let frmDta = new FormData()
-        for (let el of [ iN, iT, iE, tA ]) {
-            const nm = String(el.current?.name)
-            const vl = String(el.current?.value)
-            frmDta.append(nm, vl)
-        }
-        const controller = new AbortController()
-
-        await fetch("../php/contact.php", {
-            method: "POST",
-            body: frmDta,
-            signal: controller.signal,
-        })
-            .then((res) => res.text())
-            .then((data) => {
-                dispatch({ type: ActTps.fnOky, payload: data })
+        if (checks({ iN, iT, iE, iE2, tA, ms })) {
+            dispatch({
+                type: ActTps.fnRun,
+                payload: undefined,
             })
-            .catch((err) => {
-                console.error("Err-Contact: ", err)
-                dispatch({
-                    type: ActTps.fnErr,
-                    payload: err,
+
+            let frmDta = new FormData()
+            for (let el of [ iN, iT, iE, tA ]) {
+                const nm = String(el.current?.name)
+                const vl = String(el.current?.value)
+                frmDta.append(nm, vl)
+            }
+            const controller = new AbortController()
+
+            await fetch("../php/contact.php", {
+                method: "POST",
+                body: frmDta,
+                signal: controller.signal,
+            })
+                .then((res) => res.text())
+                .then((data) => {
+                    dispatch({ type: ActTps.fnOky, payload: data })
                 })
-            })
+                .catch((err) => {
+                    console.error("Err-Contact: ", err)
+                    dispatch({
+                        type: ActTps.fnErr,
+                        payload: err,
+                    })
+                })
 
-        setTimeout(() => {
-            nvg("/")
-        }, 6000)
-        return () => controller.abort()
+            setTimeout(() => {
+                nvg("/")
+            }, 8000)
+
+            controller.abort()
+        }
     }
 
     return (
@@ -77,7 +79,9 @@ export default function Contact() {
                     </div>
                 </div>
             ) : state.loading ? (
-                "sending..."
+                <div className="cM">
+                    <div className="cC">sending...</div>
+                </div>
             ) : (
                 <div className="l c" ref={rD}>
                     <b className="h">Contact</b>
