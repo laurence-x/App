@@ -17,15 +17,16 @@ const KeyupTx = (
 		const tal = Number(tA.current.value.length)
 		const max = Number(tA.current.maxLength)
 
+		//TODO:
 		// remaining characters //! show remaining chars somewhere... not on btn
 		// iB.current &&
 		// 	(iB.current.value = `remaining ${max - tal} chars => send`)
 
-		// maximum lenght //! include this on every keyup file
+		// maximum length //! include this on every keyup file
 		if (tal === max && ms.current) {
 			ms.current.style.display = "block"
 			ms.current.style.color = "#f00"
-			ms.current.textContent = "maximum lenght reached"
+			ms.current.textContent = "maximum length reached"
 		}
 
 	}

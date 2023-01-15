@@ -13,7 +13,7 @@ const KeyupTe = ({ iT, ms, iB }: keyUpTeT) => {
 			// format number
 			let nr = nr2.replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3")
 
-			//! add here also cc to it
+			//TODO: add here also cc to it
 
 			return nr
 		}

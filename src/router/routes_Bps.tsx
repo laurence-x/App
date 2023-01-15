@@ -1,5 +1,5 @@
-import { ElsBps } from "./rt_Els_Bps"
 import Errors from "../pages/errors"
+import { ElsBps } from "./rt_Els_Bps"
 
 export const RoutesBps = [
     {
@@ -25,6 +25,6 @@ export const RoutesBps = [
     {
         path: "*",
         element: <ElsBps.CodeSplit />,
-        errorElement: <Errors page="bp none existend" />,
+        errorElement: <Errors page="bp none existent" />,
     },
 ]
