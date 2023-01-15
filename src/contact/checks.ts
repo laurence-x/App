@@ -1,7 +1,6 @@
 import { checkT } from "types/contactT"
-import send from "./send"
 
-let checks = ({ iN, iT, iE, iE2, tA, ms, iB, rD, nvg }: checkT) => {
+const checks = ({ iN, iT, iE, iE2, tA, ms, iB }: checkT) => {
 	iB.current && (iB.current.style.visibility = "hidden")
 
 	for (let el of [ iN, iT, iE, iE2, tA ]) {
@@ -37,9 +36,6 @@ let checks = ({ iN, iT, iE, iE2, tA, ms, iB, rD, nvg }: checkT) => {
 		iE2.current?.focus()
 		return
 	}
-
-	rD.current && (rD.current.textContent = "sending...")
-	send({ iN, iT, iE, tA, rD, nvg })
 }
 
 export default checks
