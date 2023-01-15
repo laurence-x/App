@@ -1,5 +1,5 @@
 export const ActTps = {
-	fnRun: "FETCH_START",
-	fnOky: "FETCH_SUCCESS",
-	fnErr: "FETCH_ERROR",
+	fnRun: "fetch_run",
+	fnOky: "fetch_okay",
+	fnErr: "fetch_error",
 }
