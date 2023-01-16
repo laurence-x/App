@@ -19,3 +19,12 @@ export type checkT = {
 	tA: React.RefObject<HTMLTextAreaElement>
 	ms: React.RefObject<HTMLParagraphElement>
 }
+
+export type TpStt = {
+	val: number
+}
+
+export type TpAct = {
+	type: string
+	payload?: string | {}
+}

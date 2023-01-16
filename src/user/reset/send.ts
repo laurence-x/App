@@ -1,4 +1,4 @@
-import { sendT } from "types/resetT"
+import { sendT } from "types/TpRes"
 
 export default async function send({ Pw, Pw2, rD, nvg, hdc }: sendT) {
 	let fData = new URLSearchParams()

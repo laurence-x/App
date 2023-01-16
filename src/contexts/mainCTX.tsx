@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react"
-import { TpCxProv, TpCxUsr, TpCxVals, TpIcart } from "../types/contextT"
+import { TpCxProv, TpCxUsr, TpCxVals, TpIcart } from "../types/TpCTX"
 
 export const CCX = createContext({} as TpCxVals)
 export const UCX = () => useContext(CCX)

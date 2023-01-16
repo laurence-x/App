@@ -1,4 +1,4 @@
-import { keyUpEmT } from "types/contactT"
+import { keyUpEmT } from "types/TpContact"
 import BtnMsg from "../fns/btnMsg"
 
 const KeyupEm = ({ iE, iE2, ms, iB }: keyUpEmT) => {

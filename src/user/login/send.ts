@@ -1,4 +1,4 @@
-import { sendT } from "types/loginT"
+import { sendT } from "types/TpLogin"
 
 export default async function send({ Em, Pw, ms, rD, nvg }: sendT) {
 	const controller = new AbortController()

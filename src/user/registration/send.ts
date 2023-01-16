@@ -1,4 +1,4 @@
-import { sendT } from "types/regT"
+import { sendT } from "types/TpReg"
 export default async function send({ Nm, Em, Pw, ms, rD, nvg }: sendT) {
 	let fData = new URLSearchParams()
 	for (let el of [ Nm, Em, Pw ]) {

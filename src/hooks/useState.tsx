@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { UseState } from "../types/types"
+import { UseState } from "../types/Types"
 
 const UseStt = () => {
     const [ amount, setAmount ] = useState<number>(5)

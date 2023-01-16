@@ -1,4 +1,4 @@
-import { sendT } from "types/recT"
+import { sendT } from "types/TpRec"
 
 export default async function send({ Em, ms, rD, nvg }: sendT) {
 	const controller = new AbortController()

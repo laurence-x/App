@@ -1,4 +1,4 @@
-import { checksT } from "types/loginT"
+import { checksT } from "types/TpLogin"
 import send from "./send"
 
 const checks = ({ Em, Pw, ms, iB, rD, nvg }: checksT) => {

@@ -1,4 +1,4 @@
-import { checksT } from "types/resetT"
+import { checksT } from "types/TpRes"
 import PassStrenght from "../../fns/passStrong"
 import send from "./send"
 

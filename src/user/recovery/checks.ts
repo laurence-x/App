@@ -1,4 +1,4 @@
-import { checksT } from "types/recT"
+import { checksT } from "types/TpRec"
 import send from "./send"
 
 export default function checks({ Em, Em2, ms, iB, rD, nvg }: checksT) {

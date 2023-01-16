@@ -1,4 +1,4 @@
-import { cT } from "types/regT"
+import { cT } from "types/TpReg"
 import PassStrenght from "../../fns/passStrong"
 import send from "./send"
 

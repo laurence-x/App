@@ -1,5 +1,5 @@
 import { useReducer } from "react"
-import { TpAct, TpStt } from "../types/uReducerT"
+import { TpAct, TpStt } from "../types/TpUreducer"
 
 const initialStt = { val: 0 }
 
@@ -8,7 +8,6 @@ const reducer = (state: TpStt, action: TpAct) => {
         inc: { val: state.val + action.payload! },
         dec: { val: state.val - action.payload! },
         res: initialStt,
-        NOT_FOUND: state,
     }
     return opt[ action.type ]
 }
@@ -83,7 +82,6 @@ const reducer = (state: TpStt, action: TpAct) => {
         inc: { val: state.val + action.payload! },
         dec: { val: state.val - action.payload! },
         res: initialStt,
-        NOT_FOUND: state,
     }
     return opt[action.type]
 }

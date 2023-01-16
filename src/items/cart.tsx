@@ -1,5 +1,5 @@
 import { UCX } from "../contexts/mainCTX"
-import { TpIcart } from "../types/contextT"
+import { TpIcart } from "../types/TpCTX"
 
 const Cart = () => {
     const { iCart } = UCX()

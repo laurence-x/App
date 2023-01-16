@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom"
 
 import { UCX } from "../contexts/mainCTX"
-import { TpIcart } from "../types/contextT"
+import { TpIcart } from "../types/TpCTX"
 
 import iList from "./iList"
 

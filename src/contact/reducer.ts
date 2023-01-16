@@ -1,20 +1,19 @@
+import { TpAct } from "types/TpContact"
 import { ActTps } from "./atypes"
 
 export const initialStt = {
 	loading: false,
-	result: "",
 	error: false,
+	result: false,
 }
 
-export const reducer = (
-	state: any,
-	action: { type: any; payload?: string }
-) => {
+export const reducer = (state: any, action: TpAct) => {
 	switch (action.type) {
 		case ActTps.fnRun:
 			return {
 				loading: true,
 				error: false,
+				result: false,
 			}
 		case ActTps.fnOky:
 			return {

@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom"
 import { UCX } from "../contexts/mainCTX"
-import { TpStr } from "../types/types"
+import { TpStr } from "../types/Types"
 
 export default function SrcInp() {
     const { iSrcV, setSrcV } = UCX()

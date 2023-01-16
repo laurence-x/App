@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom"
 
-import { mLink } from "../types/types"
+import { mLink } from "../types/Types"
 import mItems from "./m_Items"
 
 const MLinks = (props: { mType: string }) => {

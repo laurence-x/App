@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react"
-import { UseContext } from "../types/types"
+import { UseContext } from "../types/Types"
 
 export const CX = createContext<UseContext | null>(null)
 

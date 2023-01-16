@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useSearchParams } from "react-router-dom"
-import { TpGprm } from "../types/uSrcPrmsT"
+import { TpGprm } from "../types/TpSrcParams"
 
 const UseSrcPrm = () => {
     let [ searchParams, setSearchParams ] = useSearchParams()
