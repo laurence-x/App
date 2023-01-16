@@ -84,7 +84,6 @@ export default function Contact() {
             ) : (
                 <div className="l c" ref={rD}>
                     <b className="h">Contact</b>
-                    <br />
                     <input
                         name="iN"
                         type="text"
