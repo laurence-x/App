@@ -6,7 +6,6 @@ import KeyupEm from "./keyupEm"
 import KeyupTe from "./keyupTe"
 import KeyupTx from "./keyupTx"
 
-import { ActTps } from "./atypes"
 import checks from "./checks"
 import { initialStt, reducer } from "./reducer"
 
@@ -32,7 +31,12 @@ export default function Contact() {
 
         if (checks({ iN, iT, iE, iE2, tA, ms })) {
             dispatch({
-                type: ActTps.fnRun,
+                type: "run",
+                state: {
+                    loading: false,
+                    error: false,
+                    result: false,
+                },
             })
 
             let frmDta = new FormData()
@@ -50,13 +54,24 @@ export default function Contact() {
             })
                 .then((res) => res.text())
                 .then((data) => {
-                    dispatch({ type: ActTps.fnOky, payload: data })
+                    dispatch({
+                        type: "oky",
+                        state: {
+                            loading: false,
+                            error: false,
+                            result: String(data),
+                        },
+                    })
                 })
                 .catch((err) => {
-                    console.error("Error Contact: ", err)
+                    console.error("Error Contact: ", String(err.message))
                     dispatch({
-                        type: ActTps.fnErr,
-                        payload: err,
+                        type: "err",
+                        state: {
+                            loading: false,
+                            error: true,
+                            result: String(err.message),
+                        },
                     })
                 })
 

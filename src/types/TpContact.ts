@@ -21,10 +21,12 @@ export type checkT = {
 }
 
 export type TpStt = {
-	val: number
+	loading: boolean
+	error: boolean
+	result: boolean | string
 }
 
 export type TpAct = {
-	type: string
-	payload?: string | {}
+	type: "run" | "oky" | "err"
+	state: TpStt
 }

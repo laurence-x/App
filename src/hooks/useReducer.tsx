@@ -5,8 +5,8 @@ const initialStt = { val: 0 }
 
 const reducer = (state: TpStt, action: TpAct) => {
     const opt = {
-        inc: { val: state.val + action.payload! },
-        dec: { val: state.val - action.payload! },
+        inc: { val: state.val + action.value! },
+        dec: { val: state.val - action.value! },
         res: initialStt,
     }
     return opt[ action.type ]
@@ -30,14 +30,14 @@ const UseRdc = () => {
                 type="button"
                 className="m"
                 value="+100"
-                onMouseUp={() => dispatchX({ type: "inc", payload: 100 })}
+                onMouseUp={() => dispatchX({ type: "inc", value: 100 })}
             />
             <b className="y">{stateX.val}</b>
             <input
                 type="button"
                 className="m"
                 value="-100"
-                onMouseUp={() => dispatchX({ type: "dec", payload: 100 })}
+                onMouseUp={() => dispatchX({ type: "dec", value: 100 })}
             />
             <br />
             <input
@@ -53,14 +53,14 @@ const UseRdc = () => {
                 type="button"
                 className="m"
                 value="+100"
-                onMouseUp={() => dispatchY({ type: "inc", payload: 100 })}
+                onMouseUp={() => dispatchY({ type: "inc", value: 100 })}
             />
             <b className="y">{stateY.val}</b>
             <input
                 type="button"
                 className="m"
                 value="-100"
-                onMouseUp={() => dispatchY({ type: "dec", payload: 100 })}
+                onMouseUp={() => dispatchY({ type: "dec", value: 100 })}
             />
             <br />
             <input
@@ -79,8 +79,8 @@ interface TpStt {
 }
 const reducer = (state: TpStt, action: TpAct) => {
     const opt = {
-        inc: { val: state.val + action.payload! },
-        dec: { val: state.val - action.payload! },
+        inc: { val: state.val + action.value! },
+        dec: { val: state.val - action.value! },
         res: initialStt,
     }
     return opt[action.type]
@@ -93,13 +93,13 @@ const UseRdc = () => {
             <input
                 type="button"
                 value="+100"
-                onMouseUp={() => dispatchX({ type: "inc", payload: 100 })}
+                onMouseUp={() => dispatchX({ type: "inc", value: 100 })}
             />
             <b>{stateX.val}</b>
             <input
                 type="button"
                 value="-100"
-                onMouseUp={() => dispatchX({ type: "dec", payload: 100 })}
+                onMouseUp={() => dispatchX({ type: "dec", value: 100 })}
             />
             <br />
             <input
@@ -112,13 +112,13 @@ const UseRdc = () => {
             <input
                 type="button"
                 value="+100"
-                onMouseUp={() => dispatchY({ type: "inc", payload: 100 })}
+                onMouseUp={() => dispatchY({ type: "inc", value: 100 })}
             />
             <b>{stateY.val}</b>
             <input
                 type="button"
                 value="-100"
-                onMouseUp={() => dispatchY({ type: "dec", payload: 100 })}
+                onMouseUp={() => dispatchY({ type: "dec", value: 100 })}
             />
             <br />
             <input

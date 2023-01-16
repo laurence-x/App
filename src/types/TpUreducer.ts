@@ -4,5 +4,5 @@ export type TpStt = {
 
 export type TpAct = {
 	type: "inc" | "dec" | "res"
-	payload?: number
+	value?: number
 }
