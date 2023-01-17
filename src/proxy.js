@@ -1,4 +1,4 @@
-import { createProxyMiddleware } from 'http-proxy-middleware'
+/* import { createProxyMiddleware } from 'http-proxy-middleware'
 
 module.exports = function (app) {
 	app.use(
@@ -13,3 +13,5 @@ module.exports = function (app) {
 }
 
 //~ https://www.npmjs.com/package/http-proxy-middleware
+ */
+export { }
