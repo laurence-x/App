@@ -21,12 +21,14 @@ export type checkT = {
 }
 
 export type TpStt = {
-	loading: boolean
-	error: boolean
-	result: boolean | string
+	isIni: boolean
+	isLdg: boolean
+	isOky: boolean
+	isErr: boolean
+	data: string
 }
 
 export type TpAct = {
 	type: "run" | "oky" | "err"
-	state: TpStt
+	payload: string
 }

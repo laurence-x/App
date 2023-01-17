@@ -32,11 +32,7 @@ export default function Contact() {
         if (checks({ iN, iT, iE, iE2, tA, ms })) {
             dispatch({
                 type: "run",
-                state: {
-                    loading: false,
-                    error: false,
-                    result: false,
-                },
+                payload: "",
             })
 
             let frmDta = new FormData()
@@ -53,25 +49,17 @@ export default function Contact() {
                 signal: controller.signal,
             })
                 .then((res) => res.text())
-                .then((data) => {
+                .then((dta) => {
                     dispatch({
                         type: "oky",
-                        state: {
-                            loading: false,
-                            error: false,
-                            result: String(data),
-                        },
+                        payload: String(dta),
                     })
                 })
                 .catch((err) => {
-                    console.error("Error Contact: ", String(err.message))
+                    console.error("Error Contact: ", String(err))
                     dispatch({
                         type: "err",
-                        state: {
-                            loading: false,
-                            error: true,
-                            result: String(err.message),
-                        },
+                        payload: String(err),
                     })
                 })
 
@@ -85,14 +73,14 @@ export default function Contact() {
 
     return (
         <>
-            {state.result || state.error ? (
+            {state.isOky || state.isErr ? (
                 <div className="center">
                     <div>
-                        {state.result}
-                        {state.error}
+                        {state.isOky}
+                        {state.isErr}
                     </div>
                 </div>
-            ) : state.loading ? (
+            ) : state.isLdg ? (
                 <div className="center">
                     <p>sending...</p>
                 </div>
