@@ -67,7 +67,7 @@ export default function Contact() {
                 nvg("/")
             }, 8000)
 
-            controller.abort()
+            return controller.abort()
         }
     }
 
