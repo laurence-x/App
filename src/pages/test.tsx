@@ -9,11 +9,12 @@ const Test = () => {
         let data = new URLSearchParams()
         data.append("Key", "Value")
 
-        fetch("http://127.0.0.1:3001", {
+        fetch("some_path_on_server", {
             method: "POST",
             body: data,
             // signal: controller.signal,
         })
+            // .then((r) => r.json())
             .then((r) => r.text())
             .then((r) => setRes(r))
             .catch((e) => setRes(e))
