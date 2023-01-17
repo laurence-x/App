@@ -4,10 +4,9 @@ module.exports = function (app) {
 	app.use(
 		'/api',
 		createProxyMiddleware({
-			//! Xampp: 80
-			//! NodeJs: 3001
 			//! change also in package.json
-			target: 'http://localhost:80',
+			// target: 'http://localhost:80', //~ Xampp
+			target: 'http://localhost:3001', //~ Node
 			changeOrigin: true,
 		})
 	)
