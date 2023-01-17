@@ -1,12 +1,12 @@
-const { createProxyMiddleware } = require('http-proxy-middleware')
+import { createProxyMiddleware } from 'http-proxy-middleware'
 
 module.exports = function (app) {
 	app.use(
 		'/api',
 		createProxyMiddleware({
 			//! change also in package.json
-			// target: 'http://localhost:80', //~ Xampp
-			target: 'http://localhost:3001', //~ Node
+			// target: 'http://127.0.0.1:80', //~ Xampp
+			target: 'http://127.0.0.1:3001', //~ Node
 			changeOrigin: true,
 		})
 	)
