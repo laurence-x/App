@@ -74,15 +74,9 @@ export default function Contact() {
     return (
         <>
             {state.isOky || state.isErr ? (
-                <div className="center">
-                    <div className="m y">
-                        {state.data}
-                    </div>
-                </div>
+                <p className="c y">{state.data}</p>
             ) : state.isLdg ? (
-                <div className="center">
-                    <p className="m y">sending...</p>
-                </div>
+                <b className="c">sending...</b>
             ) : (
                 <div className="l c" ref={rD}>
                     <b className="h">Contact</b>
