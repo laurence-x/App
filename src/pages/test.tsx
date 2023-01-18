@@ -9,7 +9,7 @@ const Test = () => {
         let data = new URLSearchParams()
         data.append("Key", "Value")
 
-        fetch("some_path_on_server", {
+        fetch("real_path_on_server", {
             method: "POST",
             body: data,
             // signal: controller.signal,
