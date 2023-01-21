@@ -9,7 +9,7 @@ const Test = () => {
         let data = new URLSearchParams()
         data.append("Key", "Value")
 
-        // http://127.0.0.1:3001/path
+        // http://127.0.0.1:3001/...
         fetch("path?aaa=bbb&ccc=ddd", {
             method: "POST",
             body: data,
