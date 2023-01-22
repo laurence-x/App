@@ -59,12 +59,12 @@
     "enable": false
   },
   "compileOnSave": true,
-  //~ only files in these folders will get .js files generated
+  //~ only files in these folders will get .js files generated from .ts
   "include": [
     // "test/**/*",
     "src"
   ],
-  //~ files in these folder will not get any .js files from .ts generated
+  //~ files in these folder will not get any .js files generated from .ts
   "exclude": [
     "../.vscode",
     "../code",
