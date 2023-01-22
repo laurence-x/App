@@ -8,7 +8,7 @@ const CxProv = ({ children }: TpCxProv) => {
     const [ expand, expandMenu ] = useState(false)
     const [ usr, setUsr ] = useState<TpCxUsr | null>(null)
 
-    const [ iSrcV, setSrcV ] = useState("") // input search value
+    const [ iSrcV, setSrcV ] = useState("") // top input search value
 
     // cart items: get, set, save
     const Cart = JSON.parse(String(localStorage.getItem("CartIts")))
