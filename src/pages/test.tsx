@@ -10,7 +10,7 @@ const Test = () => {
         let data = new URLSearchParams()
         data.append("Key", "Value")
 
-        // http://127.0.0.1:3001/...
+        // http://127.0.0.1:3001/....
         fetch("path?a=aaa&b=bbb", {
             method: "POST",
             body: data,
