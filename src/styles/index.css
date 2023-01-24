@@ -310,7 +310,6 @@ html::-webkit-scrollbar-button,
 @media (min-width: 1200px) {
     html {
         background-size: 100% 100%;
-        /*background-image: url(../assets/images/bg.png);*/
         /*background-image: url(../assets/images/bg_line.png);*/
     }
 
