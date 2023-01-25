@@ -11,7 +11,7 @@ const Test = () => {
         data.append("Key", "Value")
 
         // http://127.0.0.1:3001/....
-        fetch("path?a=aaa&b=bbb", {
+        fetch("path?a=111&b=222", {
             method: "POST",
             body: data,
             // signal: controller.signal,
