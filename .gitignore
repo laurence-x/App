@@ -3,6 +3,9 @@
 logs
 *.log
 *.txt
+
+# php
+*.php
 /src/php
 /src/visitor
 
