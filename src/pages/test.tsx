@@ -5,11 +5,12 @@ const Test = () => {
     const [ Res, setRes ] = useState("")
 
     useEffect(() => {
-        // const controller = new AbortController()
 
+        setRes('xxx')
+
+        /*
         let data = new URLSearchParams()
         data.append("Key", "Value")
-
         // http://127.0.0.1:3001/....
         fetch("path?a=111&b=222", {
             method: "POST",
@@ -20,8 +21,7 @@ const Test = () => {
             .then((r) => r.text())
             .then((r) => setRes(r))
             .catch((e) => setRes(e))
-
-        // return controller.abort()
+        */
     }, [])
 
     return <>{Res}</>
