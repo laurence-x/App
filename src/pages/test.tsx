@@ -6,9 +6,8 @@ const Test = () => {
 
     useEffect(() => {
 
-        setRes('xxx')
+        // setRes('xxx')
 
-        /*
         let data = new URLSearchParams()
         data.append("Key", "Value")
         // http://127.0.0.1:3001/....
@@ -21,7 +20,6 @@ const Test = () => {
             .then((r) => r.text())
             .then((r) => setRes(r))
             .catch((e) => setRes(e))
-        */
     }, [])
 
     return <>{Res}</>
