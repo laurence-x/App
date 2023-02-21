@@ -1,7 +1,7 @@
 import { UCX } from "../contexts/mainCTX"
 import { TpIcart } from "../types/TpCTX"
 
-const Cart = () => {
+const CartI = () => {
     const { iCart } = UCX()
 
     //TODO: group same item, if multiple, & show nr of same type, next to item
@@ -24,4 +24,4 @@ const Cart = () => {
     )
 }
 
-export default Cart
+export default CartI

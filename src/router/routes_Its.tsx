@@ -13,13 +13,13 @@ export const RoutesIts = [
         errorElement: <Errors page="item :id" />,
     },
     {
-        path: "cart",
-        element: <ElsIts.Cart />,
-        errorElement: <Errors page="cart" />,
+        path: "carti",
+        element: <ElsIts.CartI />,
+        errorElement: <Errors page="carti" />,
     },
     {
         path: "*",
         element: <ElsIts.Items />,
-        errorElement: <Errors page="items none existend" />,
+        errorElement: <Errors page="items none existent" />,
     },
 ]

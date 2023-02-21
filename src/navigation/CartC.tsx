@@ -11,7 +11,7 @@ export default function CartC() {
 	useMemo(() => setCits(iCart?.length), [ iCart ])
 
 	const cart = `url(${require("../assets/images/cart.png")})`
-	const toC = () => cIts !== 0 && nvg("/items/cart")
+	const toC = () => cIts !== 0 && nvg("/items/carti")
 
 	return (
 		<div
