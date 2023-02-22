@@ -11,8 +11,8 @@ export default function CartC() {
 	useMemo(
 		() =>
 			setCits(
-				cart.reduce((count: any, curItem: { Iqt: any }) => {
-					return count + curItem.Iqt
+				cart.reduce((c: any, i: { Iqt: any }) => {
+					return c + i.Iqt
 				}, 0)
 			),
 		[ cart ]
