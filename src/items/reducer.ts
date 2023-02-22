@@ -21,7 +21,7 @@ const remI = (i: TpIcart, state: { cart: any }) => {
 	const nowI = cIts.findIndex((item) => item.Iid === i.Iid)
 	const upI = { ...cIts[ nowI ] }
 	upI.Iqt--
-	upI.Iqt <= 0 ? cIts.splice(nowI, 1) : (cIts[ nowI ] = upI)
+	upI.Iqt <= -1 ? cIts.splice(nowI, 1) : (cIts[ nowI ] = upI)
 	return { ...state, cart: cIts }
 }
 

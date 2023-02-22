@@ -30,7 +30,8 @@ const CartI = () => {
 
     const curS = (e: { target: { value: string } }) => setCur(e.target.value)
 
-    console.log(`XXX: ${cart.length}`)
+    Number(tp) === 0 && nvg(`/items`)
+    console.log(`CCC: ${cart.length}`)
 
     return (
         <>
@@ -42,33 +43,36 @@ const CartI = () => {
                 <option value="GBP">Pound Sterling</option>
             </select>
             <br />
-            {cart.map((i: TpIcart) => (
-                <div className="item x c" key={i.Iid}>
-                    <h3>{i.Inm}</h3>
-                    <img src={i.Iim} alt={i.Inm} />
-                    <p className="y c">
-                        Price: {i.Ipr} x Amount: {i.Iqt}
-                    </p>
-                    <p className="g c">
-                        Total item: {(i.Ipr * Number(i.Iqt)).toFixed(2)} {cur}
-                    </p>
-                    <div>
-                        <input
-                            type="button"
-                            value="increase"
-                            className="m"
-                            onMouseUp={ItoC.bind(this, i)}
-                        />
-                        <input
-                            type="button"
-                            value="decrease"
-                            className="m"
-                            onMouseUp={IdeC.bind(this, i)}
-                        />
-                    </div>
-                </div>
-            ))}
-            {Number(tp) === 0 && nvg(`/items`)}
+            {cart.map(
+                (i: TpIcart) =>
+                    Number(i.Iqt) > 0 && (
+                        <div className="item x c" key={i.Iid}>
+                            <h3>{i.Inm}</h3>
+                            <img src={i.Iim} alt={i.Inm} />
+                            <p className="y c">
+                                Price: {i.Ipr} x Amount: {i.Iqt}
+                            </p>
+                            <p className="g c">
+                                Total item: {(i.Ipr * Number(i.Iqt)).toFixed(2)}{" "}
+                                {cur}
+                            </p>
+                            <div>
+                                <input
+                                    type="button"
+                                    value="increase"
+                                    className="m"
+                                    onMouseUp={ItoC.bind(this, i)}
+                                />
+                                <input
+                                    type="button"
+                                    value="decrease"
+                                    className="m"
+                                    onMouseUp={IdeC.bind(this, i)}
+                                />
+                            </div>
+                        </div>
+                    )
+            )}
         </>
     )
 }
