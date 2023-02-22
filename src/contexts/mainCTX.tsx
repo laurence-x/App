@@ -18,6 +18,9 @@ const CxProv = ({ children }: TpCxProv) => {
 
     const [ iSrcV, setSrcV ] = useState("") // top input search value
 
+    const [ cartState, dispatch ] = useReducer(shopReducer, { cart: [] })
+    const addC = (i: TpIcart) => { dispatch({ type: iAdd, it: i }) }
+    const delC = (i: TpIcart) => { dispatch({ type: iDel, it: i }) }
     // const CartS = JSON.parse(String(localStorage.getItem("CartIts")))
     // const [ iCart, setiCart ] = useState<TpIcart[]>(CartS || [])
     // useEffect(() => {
@@ -25,9 +28,6 @@ const CxProv = ({ children }: TpCxProv) => {
     // }, [ iCart ])
     // const iToCart = (itm: TpIcart) => setiCart((i) => [ ...i, itm ])
 
-    const [ cartState, dispatch ] = useReducer(shopReducer, { cart: [] })
-    const addC = (i: TpIcart) => { dispatch({ type: iAdd, it: i }) }
-    const delC = (i: TpIcart) => { dispatch({ type: iDel, it: i }) }
 
     const CxVals: TpCxVals = {
         usr,

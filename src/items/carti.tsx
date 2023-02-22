@@ -34,9 +34,8 @@ const CartI = () => {
         <>
             <div className="c m">{`Total: ${tp} ${cur}`}</div>
             <select onChange={curS} className="c m">
-                <option value="USD">
-                    {cur === "USD" ? "choose currency" : "US Dollar"}
-                </option>
+                <option value={cur}>choose currency...</option>
+                <option value="USD">US Dollar</option>
                 <option value="EUR">Euro</option>
                 <option value="GBP">Pound Sterling</option>
             </select>
