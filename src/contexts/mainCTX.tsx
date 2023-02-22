@@ -1,12 +1,12 @@
 import {
     createContext,
     useContext,
-    // useEffect,
+    useEffect,
     useReducer,
     useState,
 } from "react"
 
-import { iAdd, iDel, shopReducer } from "../items/reducer"
+import { iAdd, iDel, reducer } from "../items/reducer"
 import { TpCxProv, TpCxUsr, TpCxVals, TpIcart } from "../types/TpCTX"
 
 const CCX = createContext({} as TpCxVals)
@@ -18,16 +18,21 @@ const CxProv = ({ children }: TpCxProv) => {
 
     const [ iSrcV, setSrcV ] = useState("") // top input search value
 
-    const [ cartState, dispatch ] = useReducer(shopReducer, { cart: [] })
-    const addC = (i: TpIcart) => { dispatch({ type: iAdd, it: i }) }
-    const delC = (i: TpIcart) => { dispatch({ type: iDel, it: i }) }
-    // const CartS = JSON.parse(String(localStorage.getItem("CartIts")))
-    // const [ iCart, setiCart ] = useState<TpIcart[]>(CartS || [])
-    // useEffect(() => {
-    //     localStorage.setItem("CartIts", JSON.stringify(iCart))
-    // }, [ iCart ])
-    // const iToCart = (itm: TpIcart) => setiCart((i) => [ ...i, itm ])
+    const CartS = JSON.parse(String(localStorage.getItem("cIts")))
+    const [ iC, setC ] = useState(CartS || [])
 
+    const [ cStt, dsp ] = useReducer(reducer, { cart: [] })
+    const addC = (i: TpIcart) => dsp({ type: iAdd, it: i })
+    const delC = (i: TpIcart) => dsp({ type: iDel, it: i })
+
+    // on cart state change, set items for cart context & local storage
+    useEffect(() => {
+        // modify only if cart state from useReducer is not empty
+        if (cStt.cart.length > 0) {
+            localStorage.setItem("cIts", JSON.stringify(cStt.cart))
+            setC(cStt.cart)
+        }
+    }, [ cStt ])
 
     const CxVals: TpCxVals = {
         usr,
@@ -36,9 +41,7 @@ const CxProv = ({ children }: TpCxProv) => {
         expandMenu,
         iSrcV,
         setSrcV,
-        // iCart,
-        // setiCart,
-        cart: cartState.cart,
+        cart: iC,
         ItoC: addC,
         IdeC: delC,
     }

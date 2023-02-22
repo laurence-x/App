@@ -22,8 +22,6 @@ export type TpCxVals = {
 	expandMenu: React.Dispatch<React.SetStateAction<boolean>>
 	iSrcV: string
 	setSrcV: React.Dispatch<React.SetStateAction<string>>
-	// iCart: TpIcart[] | null
-	// setiCart: React.Dispatch<React.SetStateAction<Array<TpIcart>>>
 	cart: []
 	ItoC: (i: TpIcart) => void
 	IdeC: (i: TpIcart) => void

@@ -33,7 +33,7 @@ const remI = (i: TpIcart, state: { cart: any }) => {
 	return { ...state, cart: updatedCart }
 }
 
-export const shopReducer = (state: any, action: { type: any; it: any }) => {
+export const reducer = (state: any, action: { type: any; it: any }) => {
 	switch (action.type) {
 		case iAdd:
 			return addI(action.it, state)
