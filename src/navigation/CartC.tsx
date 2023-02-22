@@ -3,14 +3,22 @@ import { useNavigate } from "react-router-dom"
 import { UCX } from "../contexts/mainCTX"
 
 export default function CartC() {
-	const { iCart } = UCX()
+	const { cart } = UCX()
 	const nvg = useNavigate()
 	const [ cIts, setCits ] = useState<number>()
 	const [ col, setCol ] = useState("")
 
-	useMemo(() => setCits(iCart?.length), [ iCart ])
+	useMemo(
+		() =>
+			setCits(
+				cart.reduce((count: any, curItem: { Iqt: any }) => {
+					return count + curItem.Iqt
+				}, 0)
+			),
+		[ cart ]
+	)
 
-	const cart = `url(${require("../assets/images/cart.png")})`
+	const cartL = `url(${require("../assets/images/cart.png")})`
 	const toC = () => cIts !== 0 && nvg("/items/carti")
 
 	return (
@@ -20,7 +28,7 @@ export default function CartC() {
 					? { color: "#2aa" }
 					: {
 						color: `${col}`,
-						backgroundImage: cart,
+						backgroundImage: cartL,
 						cursor: "pointer",
 					}
 			}

@@ -8,10 +8,11 @@ export type TpCxUsr = {
 }
 
 export type TpIcart = {
-	p_id?: string
-	p_nm?: string
-	p_im?: string
-	p_pr?: number
+	Iid: string
+	Inm: string
+	Iim: string
+	Ipr: number
+	Iqt?: number
 }
 
 export type TpCxVals = {
@@ -21,7 +22,9 @@ export type TpCxVals = {
 	expandMenu: React.Dispatch<React.SetStateAction<boolean>>
 	iSrcV: string
 	setSrcV: React.Dispatch<React.SetStateAction<string>>
-	iToCart: (itm: TpIcart) => void
-	iCart: TpIcart[] | null
-	setiCart: React.Dispatch<React.SetStateAction<Array<TpIcart>>>
+	// iCart: TpIcart[] | null
+	// setiCart: React.Dispatch<React.SetStateAction<Array<TpIcart>>>
+	cart: []
+	ItoC: (i: TpIcart) => void
+	IdeC: (i: TpIcart) => void
 }

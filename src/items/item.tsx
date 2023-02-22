@@ -5,31 +5,30 @@ import { TpIcart } from "../types/TpCTX"
 
 import iList from "./iList"
 
-export default function Item() {
+export default function Item(this: any) {
     const nvg = useNavigate()
     const back = () => nvg(-1)
 
-    const { iToCart } = UCX()
+    const { ItoC } = UCX()
 
     const paramId = String(useParams().id)
-    const iNow = iList.find((iDtl) => iDtl.p_id === paramId)
-    const it = iNow as TpIcart
+    const i = iList.find((iDtl) => iDtl.Iid === paramId) as TpIcart
 
     return (
         <div className="m">
             <br />
-            <b>{it.p_nm}</b>
+            <b>{i.Inm}</b>
             <br />
             <div className="c">
-                <img src={it.p_im} alt={it.p_nm} />
+                <img src={i.Iim} alt={i.Inm} />
             </div>
-            <p className="c">${it.p_pr},-</p>
+            <p className="c">${i.Ipr},-</p>
             <br />
             <input
                 type="button"
                 value="add to cart"
                 className="m"
-                onMouseUp={() => iToCart(it)}
+                onMouseUp={ItoC.bind(this, i)}
             />
             <br />
             <input type="button" value="back" onMouseUp={back} />

@@ -2,24 +2,31 @@ import { UCX } from "../contexts/mainCTX"
 import { TpIcart } from "../types/TpCTX"
 
 const CartI = () => {
-    const { iCart } = UCX()
+    const { cart, IdeC } = UCX()
 
-    //TODO: group same item, if multiple, & show nr of same type, next to item
-    //TODO: possibility to delete items from cart
     //TODO: increase/decrease nr items in cart
     //TODO: show final amount & continue to payment options (create)
 
     return (
         <>
-            {iCart?.map((i: TpIcart, index) => {
-                return (
-                    <div className="item x c" key={index}>
-                        <h3>{i.p_nm}</h3>
-                        <img src={i.p_im} alt={i.p_nm} />
-                        <p className="y c">${i.p_pr},-$</p>
+            {cart.length < 1 && <p>redir to items...</p>}
+            <div>
+                {cart.map((i: TpIcart) => (
+                    <div className="item x c" key={i.Iid}>
+                        <h3>{i.Inm}</h3>
+                        <img src={i.Iim} alt={i.Inm} />
+                        <p className="y c">
+                            {i.Ipr} ({i.Iqt})
+                        </p>
+                        <input
+                            type="button"
+                            value="delete"
+                            className="m"
+                            onMouseUp={IdeC.bind(this, i)}
+                        />
                     </div>
-                )
-            })}
+                ))}
+            </div>
         </>
     )
 }
