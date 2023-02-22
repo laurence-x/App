@@ -4,41 +4,33 @@ export const iAdd = "iAdd"
 export const iDel = "iDel"
 
 const addI = (i: TpIcart, state: { cart: any }) => {
-	const updatedCart = [ ...state.cart ]
-	const updatedItemIndex = updatedCart.findIndex((item) => item.Iid === i.Iid)
-	if (updatedItemIndex < 0) {
-		updatedCart.push({ ...i, Iqt: 1 })
+	const cIts = [ ...state.cart ]
+	const nowI = cIts.findIndex((item) => item.Iid === i.Iid)
+	if (nowI < 0) {
+		cIts.push({ ...i, Iqt: 1 })
 	} else {
-		const updatedItem = {
-			...updatedCart[ updatedItemIndex ],
-		}
-		updatedItem.Iqt++
-		updatedCart[ updatedItemIndex ] = updatedItem
+		const upI = { ...cIts[ nowI ] }
+		upI.Iqt++
+		cIts[ nowI ] = upI
 	}
-	return { ...state, cart: updatedCart }
+	return { ...state, cart: cIts }
 }
 
 const remI = (i: TpIcart, state: { cart: any }) => {
-	const updatedCart = [ ...state.cart ]
-	const updatedItemIndex = updatedCart.findIndex((item) => item.Iid === i.Iid)
-	const updatedItem = {
-		...updatedCart[ updatedItemIndex ],
-	}
-	updatedItem.Iqt--
-	if (updatedItem.Iqt <= 0) {
-		updatedCart.splice(updatedItemIndex, 1)
-	} else {
-		updatedCart[ updatedItemIndex ] = updatedItem
-	}
-	return { ...state, cart: updatedCart }
+	const cIts = [ ...state.cart ]
+	const nowI = cIts.findIndex((item) => item.Iid === i.Iid)
+	const upI = { ...cIts[ nowI ] }
+	upI.Iqt--
+	upI.Iqt <= 0 ? cIts.splice(nowI, 1) : (cIts[ nowI ] = upI)
+	return { ...state, cart: cIts }
 }
 
-export const reducer = (state: any, action: { type: any; it: any }) => {
-	switch (action.type) {
+export const reducer = (state: any, a: { type: any; it: any }) => {
+	switch (a.type) {
 		case iAdd:
-			return addI(action.it, state)
+			return addI(a.it, state)
 		case iDel:
-			return remI(action.it, state)
+			return remI(a.it, state)
 		default:
 			return state
 	}

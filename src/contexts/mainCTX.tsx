@@ -21,7 +21,7 @@ const CxProv = ({ children }: TpCxProv) => {
     const CartS = JSON.parse(String(localStorage.getItem("cIts")))
     const [ iC, setC ] = useState(CartS || [])
 
-    const [ cStt, dsp ] = useReducer(reducer, { cart: [] })
+    const [ cStt, dsp ] = useReducer(reducer, { cart: iC })
     const addC = (i: TpIcart) => dsp({ type: iAdd, it: i })
     const delC = (i: TpIcart) => dsp({ type: iDel, it: i })
 
