@@ -4,13 +4,8 @@ export const iAdd = "iAdd"
 export const iDel = "iDel"
 
 const addI = (i: TpIcart, state: { cart: any }) => {
-	console.log("Adding ID to cart: " + i.Iid)
-
 	const updatedCart = [ ...state.cart ]
-	const updatedItemIndex = updatedCart.findIndex(
-		(item) => item.Iid === i.Iid
-	)
-
+	const updatedItemIndex = updatedCart.findIndex((item) => item.Iid === i.Iid)
 	if (updatedItemIndex < 0) {
 		updatedCart.push({ ...i, Iqt: 1 })
 	} else {
@@ -24,13 +19,8 @@ const addI = (i: TpIcart, state: { cart: any }) => {
 }
 
 const remI = (i: TpIcart, state: { cart: any }) => {
-	console.log("Removing ID from cart: " + i.Iid)
-
 	const updatedCart = [ ...state.cart ]
-	const updatedItemIndex = updatedCart.findIndex(
-		(item) => item.Iid === i.Iid
-	)
-
+	const updatedItemIndex = updatedCart.findIndex((item) => item.Iid === i.Iid)
 	const updatedItem = {
 		...updatedCart[ updatedItemIndex ],
 	}
@@ -43,10 +33,7 @@ const remI = (i: TpIcart, state: { cart: any }) => {
 	return { ...state, cart: updatedCart }
 }
 
-export const shopReducer = (
-	state: any,
-	action: { type: any; it: any }
-) => {
+export const shopReducer = (state: any, action: { type: any; it: any }) => {
 	switch (action.type) {
 		case iAdd:
 			return addI(action.it, state)
