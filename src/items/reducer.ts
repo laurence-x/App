@@ -1,29 +1,32 @@
 import { TpIcart } from "types/TpCTX"
 
-const addI = (i: TpIcart, s: { cart: TpIcart[] }) => {
-	const cIts = [ ...s.cart ]
-	const nowI = cIts.findIndex((iX) => iX.Iid === i.Iid)
-	if (nowI < 0) {
-		cIts.push({ ...i, Iqt: 1 })
+// adding an item to the cart
+const addI = (i: TpIcart, s: { c: TpIcart[] }) => {
+	const cIts = [ ...s.c ] // get the state of the cart items
+	const iP = cIts.findIndex((iX) => iX.Iid === i.Iid) // get item position
+	if (iP < 0) {
+		cIts.push({ ...i, iCt: 1 }) // set count for actual item to 1 if none
 	} else {
-		const upI = { ...cIts[ nowI ] }
-		upI.Iqt!++
-		cIts[ nowI ] = upI
+		const iC = { ...cIts[ iP ] } // get item from cart state
+		iC.iCt!++ // increase count for actual item
+		cIts[ iP ] = iC // assign updated item to one in cart state
 	}
-	return { ...s, cart: cIts }
+	return { ...s, c: cIts }
 }
 
-const remI = (i: TpIcart, s: { cart: TpIcart[] }) => {
-	const cIts = [ ...s.cart ]
-	const nowI = cIts.findIndex((iX) => iX.Iid === i.Iid)
-	const upI = { ...cIts[ nowI ] }
-	upI.Iqt!--
-	upI.Iqt! <= -1 ? cIts.splice(nowI, 1) : (cIts[ nowI ] = upI)
-	return { ...s, cart: cIts }
+// removing an item from the cart
+const remI = (i: TpIcart, s: { c: TpIcart[] }) => {
+	const cIts = [ ...s.c ] // get the state of the cart items
+	const iP = cIts.findIndex((iX) => iX.Iid === i.Iid) // get item position
+	const iC = { ...cIts[ iP ] } // get item from cart state
+	iC.iCt!-- // decrease item count
+	// delete item if count in cart state is 0, else leave as it is
+	iC.iCt! <= -1 ? cIts.splice(iP, 1) : (cIts[ iP ] = iC)
+	return { ...s, c: cIts }
 }
 
 export const reducer = (
-	s: { cart: TpIcart[] },
+	s: { c: TpIcart[] },
 	a: { type: string; it: TpIcart }
 ) => {
 	switch (a.type) {

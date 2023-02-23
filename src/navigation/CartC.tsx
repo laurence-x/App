@@ -11,15 +11,15 @@ export default function CartC() {
 	useEffect(
 		() =>
 			setCits(
-				cart.reduce((c: number, i: { Iqt: number }) => {
-					return c + i.Iqt
+				cart.reduce((c: number, i: { iCt: number }) => {
+					return c + i.iCt
 				}, 0)
 			),
 		[ cart ]
-	)
+	) // count items in cart on mount & on every cart state change
 
 	const cartL = `url(${require("../assets/images/cart.png")})`
-	const toC = () => cIts !== 0 && nvg("/items/carti")
+	const toC = () => cIts !== 0 && nvg("/items/carti") // click if items in crt
 
 	return (
 		<div

@@ -833,6 +833,6 @@ main {
 
 .item {
     display: block;
-    border-bottom: 0.08rem dotted var(--w);
+    border-top: 0.08rem dotted var(--w);
     padding: 4rem 0;
 }
