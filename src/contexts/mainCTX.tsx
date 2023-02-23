@@ -6,7 +6,7 @@ import {
     useState,
 } from "react"
 
-import { iAdd, iDel, reducer } from "../items/reducer"
+import { reducer } from "../items/reducer"
 import { TpCxProv, TpCxUsr, TpCxVals, TpIcart } from "../types/TpCTX"
 
 const CCX = createContext({} as TpCxVals)
@@ -22,12 +22,12 @@ const CxProv = ({ children }: TpCxProv) => {
     const [ iC, setC ] = useState(CartS || [])
 
     const [ cStt, dsp ] = useReducer(reducer, { cart: iC })
-    const addC = (i: TpIcart) => dsp({ type: iAdd, it: i })
-    const delC = (i: TpIcart) => dsp({ type: iDel, it: i })
+    const addC = (i: TpIcart) => dsp({ type: "iAdd", it: i })
+    const delC = (i: TpIcart) => dsp({ type: "iDel", it: i })
 
     // on cart state change, set items for cart context & local storage
     useEffect(() => {
-        // modify only if cart state not empty
+        // execute only if cart state exists
         if (cStt.cart.length > 0) {
             localStorage.setItem("cIts", JSON.stringify(cStt.cart))
             setC(cStt.cart)

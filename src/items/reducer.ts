@@ -1,11 +1,8 @@
 import { TpIcart } from "types/TpCTX"
 
-export const iAdd = "iAdd"
-export const iDel = "iDel"
-
-const addI = (i: TpIcart, state: { cart: TpIcart[] }) => {
-	const cIts = [ ...state.cart ]
-	const nowI = cIts.findIndex((item) => item.Iid === i.Iid)
+const addI = (i: TpIcart, s: { cart: TpIcart[] }) => {
+	const cIts = [ ...s.cart ]
+	const nowI = cIts.findIndex((iX) => iX.Iid === i.Iid)
 	if (nowI < 0) {
 		cIts.push({ ...i, Iqt: 1 })
 	} else {
@@ -13,28 +10,28 @@ const addI = (i: TpIcart, state: { cart: TpIcart[] }) => {
 		upI.Iqt!++
 		cIts[ nowI ] = upI
 	}
-	return { ...state, cart: cIts }
+	return { ...s, cart: cIts }
 }
 
-const remI = (i: TpIcart, state: { cart: TpIcart[] }) => {
-	const cIts = [ ...state.cart ]
-	const nowI = cIts.findIndex((item) => item.Iid === i.Iid)
+const remI = (i: TpIcart, s: { cart: TpIcart[] }) => {
+	const cIts = [ ...s.cart ]
+	const nowI = cIts.findIndex((iX) => iX.Iid === i.Iid)
 	const upI = { ...cIts[ nowI ] }
 	upI.Iqt!--
 	upI.Iqt! <= -1 ? cIts.splice(nowI, 1) : (cIts[ nowI ] = upI)
-	return { ...state, cart: cIts }
+	return { ...s, cart: cIts }
 }
 
 export const reducer = (
-	state: { cart: TpIcart[] },
+	s: { cart: TpIcart[] },
 	a: { type: string; it: TpIcart }
 ) => {
 	switch (a.type) {
-		case iAdd:
-			return addI(a.it, state)
-		case iDel:
-			return remI(a.it, state)
+		case "iAdd":
+			return addI(a.it, s)
+		case "iDel":
+			return remI(a.it, s)
 		default:
-			return state
+			return s
 	}
 }
