@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from "react"
-import { useNavigate } from "react-router-dom"
 import { UCX } from "../contexts/mainCTX"
 import { TpIcart } from "../types/TpCTX"
 
@@ -9,7 +8,6 @@ const CartI = () => {
     const [ exR, setExR ] = useState<number>(1)
     const [ tp, setTp ] = useState<number>()
     const { cart, ItoC, IdeC } = UCX()
-    const nvg = useNavigate()
 
     useMemo(() => {
         localStorage.setItem("crncy", JSON.stringify(cur))
@@ -21,7 +19,7 @@ const CartI = () => {
 
     useEffect(() => {
         setTp(
-            cart.reduce((c: any, i: { Iqt: any; Ipr: any }) => {
+            cart.reduce((c: number, i: { Iqt: number; Ipr: number }) => {
                 let Nr = c + i.Iqt * i.Ipr * exR
                 return Number(Nr.toFixed(2))
             }, 0)
@@ -30,48 +28,55 @@ const CartI = () => {
 
     const curS = (e: { target: { value: string } }) => setCur(e.target.value)
 
-    Number(tp) === 0 && nvg(`/items`)
-    console.log(`CCC: ${cart.length}`)
+    tp === 0 && localStorage.setItem("cIts", JSON.stringify([]))
 
     return (
         <>
-            <div className="c m">{`Total: ${tp} ${cur}`}</div>
-            <select onChange={curS} className="c m">
-                <option value={cur}>choose currency...</option>
-                <option value="USD">US Dollar</option>
-                <option value="EUR">Euro</option>
-                <option value="GBP">Pound Sterling</option>
-            </select>
-            <br />
-            {cart.map(
-                (i: TpIcart) =>
-                    Number(i.Iqt) > 0 && (
-                        <div className="item x c" key={i.Iid}>
-                            <h3>{i.Inm}</h3>
-                            <img src={i.Iim} alt={i.Inm} />
-                            <p className="y c">
-                                Price: {i.Ipr} x Amount: {i.Iqt}
-                            </p>
-                            <p className="g c">
-                                Total item: {(i.Ipr * Number(i.Iqt)).toFixed(2)}{" "}
-                                {cur}
-                            </p>
-                            <div>
-                                <input
-                                    type="button"
-                                    value="increase"
-                                    className="m"
-                                    onMouseUp={ItoC.bind(this, i)}
-                                />
-                                <input
-                                    type="button"
-                                    value="decrease"
-                                    className="m"
-                                    onMouseUp={IdeC.bind(this, i)}
-                                />
-                            </div>
-                        </div>
-                    )
+            {tp === 0 ? (
+                <b className="r">Your cart is empty!</b>
+            ) : (
+                <div>
+                    <div className="c m">{`Total: ${tp} ${cur}`}</div>
+                    <select onChange={curS} className="c m">
+                        <option value={cur}>choose currency...</option>
+                        <option value="USD">US Dollar</option>
+                        <option value="EUR">Euro</option>
+                        <option value="GBP">Pound Sterling</option>
+                    </select>
+                    <br />
+                    {cart.map(
+                        (i: TpIcart) =>
+                            Number(i.Iqt) > 0 && (
+                                <div className="item x c" key={i.Iid}>
+                                    <h3>{i.Inm}</h3>
+                                    <img src={i.Iim} alt={i.Inm} />
+                                    <p className="y c">
+                                        {`Price: $${i.Ipr} x Amount: ${i.Iqt}`}
+                                    </p>
+                                    <p className="g c">
+                                        Total item:
+                                        {` ${(i.Ipr * Number(i.Iqt)).toFixed(
+                                            2
+                                        )} ${cur}`}
+                                    </p>
+                                    <div>
+                                        <input
+                                            type="button"
+                                            value="increase"
+                                            className="m"
+                                            onMouseUp={ItoC.bind(this, i)}
+                                        />
+                                        <input
+                                            type="button"
+                                            value="decrease"
+                                            className="m"
+                                            onMouseUp={IdeC.bind(this, i)}
+                                        />
+                                    </div>
+                                </div>
+                            )
+                    )}
+                </div>
             )}
         </>
     )

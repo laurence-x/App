@@ -1,17 +1,17 @@
-import { useMemo, useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { UCX } from "../contexts/mainCTX"
 
 export default function CartC() {
 	const { cart } = UCX()
-	const nvg = useNavigate()
 	const [ cIts, setCits ] = useState<number>()
 	const [ col, setCol ] = useState("")
+	const nvg = useNavigate()
 
-	useMemo(
+	useEffect(
 		() =>
 			setCits(
-				cart.reduce((c: any, i: { Iqt: any }) => {
+				cart.reduce((c: number, i: { Iqt: number }) => {
 					return c + i.Iqt
 				}, 0)
 			),

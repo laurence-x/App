@@ -1,8 +1,8 @@
-import { useMemo, useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-import { UCX } from "../contexts/mainCTX"
 import { TpIcart } from "types/TpCTX"
+import { UCX } from "../contexts/mainCTX"
 import iList from "./iList"
 
 const Items = () => {
@@ -10,7 +10,7 @@ const Items = () => {
     const [ its, setIts ] = useState(iList)
     const nvg = useNavigate()
 
-    useMemo(() => {
+    useEffect(() => {
         setIts(
             iList.filter((i) =>
                 i.Inm?.toLowerCase().includes(iSrcV.toLowerCase())

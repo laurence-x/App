@@ -5,7 +5,7 @@ import { TpIcart } from "../types/TpCTX"
 
 import iList from "./iList"
 
-export default function Item(this: any) {
+const Item = () => {
     const nvg = useNavigate()
     const back = () => nvg(-1)
 
@@ -35,3 +35,5 @@ export default function Item(this: any) {
         </div>
     )
 }
+
+export default Item

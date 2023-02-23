@@ -27,7 +27,7 @@ const CxProv = ({ children }: TpCxProv) => {
 
     // on cart state change, set items for cart context & local storage
     useEffect(() => {
-        // modify only if cart state from useReducer is not empty
+        // modify only if cart state not empty
         if (cStt.cart.length > 0) {
             localStorage.setItem("cIts", JSON.stringify(cStt.cart))
             setC(cStt.cart)
