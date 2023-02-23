@@ -18,7 +18,7 @@ const Items = () => {
         )
     }, [ iSrcV ]) // on input search value change, pick matching from items list
 
-    // set items list based on the select element option value
+    // set items list order, based on the select element option value
     const sortI = (e: { target: { value: string } }) => {
         const s: string = e.target.value
         const sIts = [ ...its ]
@@ -31,10 +31,10 @@ const Items = () => {
     return (
         <>
             <select onChange={sortI} className="c m">
-                <option value="d">default</option>
-                <option value="n">by name</option>
-                <option value="c">cheapest</option>
-                <option value="e">expensive</option>
+                <option value="d">default order</option>
+                <option value="n">order by name</option>
+                <option value="c">cheapest first</option>
+                <option value="e">expensive first</option>
             </select>
             <br />
             {its.map((i: TpIcart) => (

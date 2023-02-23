@@ -13,9 +13,9 @@ export const RoutesIts = [
         errorElement: <Errors page="item :id" />,
     },
     {
-        path: "carti",
+        path: "cart",
         element: <ElsIts.CartI />,
-        errorElement: <Errors page="carti" />,
+        errorElement: <Errors page="cart" />,
     },
     {
         path: "*",
