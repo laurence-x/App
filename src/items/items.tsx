@@ -31,7 +31,7 @@ const Items = () => {
     return (
         <>
             <select onChange={sortI} className="c m">
-                <option value="d">default order</option>
+                <option value="d">default order...</option>
                 <option value="n">order by name</option>
                 <option value="c">cheapest first</option>
                 <option value="e">expensive first</option>
