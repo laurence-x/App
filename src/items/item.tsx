@@ -9,10 +9,10 @@ const Item = () => {
     const nvg = useNavigate()
     const back = () => nvg(-1)
 
-    const { ItoC } = UCX()
+    const { ItoC } = UCX() // get item to cart from context
 
-    const paramId = String(useParams().id)
-    const i = iList.find((iDtl) => iDtl.Iid === paramId) as TpIcart
+    const p = String(useParams().id) // get parameter id
+    const i = iList.find((iDtl) => iDtl.Iid === p) as TpIcart // get item by id
 
     return (
         <div className="m">

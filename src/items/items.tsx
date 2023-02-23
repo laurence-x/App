@@ -6,8 +6,8 @@ import { UCX } from "../contexts/mainCTX"
 import iList from "./iList"
 
 const Items = () => {
-    const { iSrcV, ItoC } = UCX()
-    const [ its, setIts ] = useState(iList)
+    const { iSrcV, ItoC } = UCX() // get input search value & item to cart
+    const [ its, setIts ] = useState(iList) // set items list. default iList.ts
     const nvg = useNavigate()
 
     useEffect(() => {
@@ -16,8 +16,9 @@ const Items = () => {
                 i.Inm?.toLowerCase().includes(iSrcV.toLowerCase())
             )
         )
-    }, [ iSrcV ])
+    }, [ iSrcV ]) // on input search value change, pick matching from items list
 
+    // set items list based on the select element option value
     const sortI = (e: { target: { value: string } }) => {
         const s: string = e.target.value
         const sIts = [ ...its ]
