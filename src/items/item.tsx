@@ -15,7 +15,7 @@ const Item = () => {
     const i = iList.find((iDtl) => iDtl.Iid === p) as TpIcart // get item by id
 
     return (
-        <div className="m">
+        <div className="l">
             <br />
             <b>{i.Inm}</b>
             <br />
@@ -24,14 +24,20 @@ const Item = () => {
             </div>
             <p className="c">${i.Ipr},-</p>
             <br />
-            <input
-                type="button"
-                value="add to cart"
-                className="m"
-                onMouseUp={ItoC.bind(this, i)}
-            />
-            <br />
-            <input type="button" value="back" onMouseUp={back} />
+            <div className="fx m">
+                <input
+                    type="button"
+                    value="to cart"
+                    className="fc"
+                    onMouseUp={ItoC.bind(this, i)}
+                />
+                <input
+                    type="button"
+                    value="back"
+                    className="fc"
+                    onMouseUp={back}
+                />
+            </div>
         </div>
     )
 }

@@ -41,19 +41,19 @@ const CartI = () => {
                 <b className="r">Your cart is empty!</b>
             ) : (
                 <div>
-                    <div className="c m">{`Total: ${tp} ${cur}`}</div>
                     <select onChange={curS} className="c m">
                         <option value={cur}>choose currency...</option>
-                        <option value="USD">US Dollar</option>
-                        <option value="EUR">Euro</option>
-                        <option value="GBP">Pound Sterling</option>
+                        <option value="USD">view in US Dollar</option>
+                        <option value="EUR">view in Euro</option>
+                        <option value="GBP">view in Pound Sterling</option>
                     </select>
+                    <h2 className="c g">{`Total: ${tp} ${cur}`}</h2>
                     <br />
                     {cart.map(
                         (i: TpIcart) =>
                             Number(i.iCt) > 0 && (
                                 <div className="item x c" key={i.Iid}>
-                                    <h3>{i.Inm}</h3>
+                                    <h2>{i.Inm}</h2>
                                     <img src={i.Iim} alt={i.Inm} />
                                     <p className="y c">
                                         {`Price: $${i.Ipr} x Amount: ${i.iCt}`}
@@ -66,17 +66,18 @@ const CartI = () => {
                                             Number(i.iCt)
                                         ).toFixed(2)} ${cur}`}
                                     </p>
-                                    <div>
+                                    <br />
+                                    <div className="fx m">
                                         <input
                                             type="button"
                                             value="increase"
-                                            className="m"
+                                            className="fc"
                                             onMouseUp={ItoC.bind(this, i)}
                                         />
                                         <input
                                             type="button"
                                             value="decrease"
-                                            className="m"
+                                            className="fc"
                                             onMouseUp={IdeC.bind(this, i)}
                                         />
                                     </div>

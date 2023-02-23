@@ -44,19 +44,20 @@ const Items = () => {
                     <img src={i.Iim} alt={i.Inm} />
                     <p className="c">${i.Ipr},-</p>
                     <br />
-                    <input
-                        type="button"
-                        value="details"
-                        className="m"
-                        onMouseUp={() => nvg(`/items/${i.Iid}`)}
-                    />
-                    <br />
-                    <input
-                        type="button"
-                        value="add to cart"
-                        className="m"
-                        onMouseUp={ItoC.bind(this, i)}
-                    />
+                    <div className="fx m">
+                        <input
+                            type="button"
+                            value="details"
+                            className="fc"
+                            onMouseUp={() => nvg(`/items/${i.Iid}`)}
+                        />
+                        <input
+                            type="button"
+                            value="to cart"
+                            className="fc"
+                            onMouseUp={ItoC.bind(this, i)}
+                        />
+                    </div>
                 </div>
             ))}
         </>
