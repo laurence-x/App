@@ -1,4 +1,4 @@
 const Nasa = () => {
-	return <>Nasa...</>
+	return <>coming soon...</>
 }
 export default Nasa
