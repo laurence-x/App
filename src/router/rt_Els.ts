@@ -9,9 +9,12 @@ export const Els = {
     Res: lazy(() => import("../user/reset/reset")),
 
     LayItems: lazy(() => import("../layouts/lay_Items")),
+    Nasa: lazy(() => import("../pages/nasa")),
+
     LayHks: lazy(() => import("../layouts/lay_Hks")),
     LayBps: lazy(() => import("../layouts/lay_Bps")),
     LayDps: lazy(() => import("../layouts/lay_Dps")),
+
 
     Contact: lazy(() => import("../contact/contact")),
 

@@ -1,8 +1,9 @@
 import { RouteObject } from "react-router-dom"
-import { RoutesIts } from "./routes_Its"
-import { RoutesHks } from "./routes_Hks"
+
 import { RoutesBps } from "./routes_Bps"
 import { RoutesDps } from "./routes_Dps"
+import { RoutesHks } from "./routes_Hks"
+import { RoutesIts } from "./routes_Its"
 import { Els } from "./rt_Els"
 
 export const Routes: RouteObject[] = [
@@ -42,6 +43,11 @@ export const Routes: RouteObject[] = [
         children: RoutesIts,
     },
     {
+        path: "nasa",
+        element: <Els.Nasa />,
+        errorElement: <Els.Errors page="nasa" />,
+    },
+    {
         path: "hks",
         element: <Els.LayHks />,
         children: RoutesHks,
@@ -73,6 +79,6 @@ export const Routes: RouteObject[] = [
     {
         path: "*",
         element: <Els.Home />,
-        errorElement: <Els.Errors page="page none existend" />,
+        errorElement: <Els.Errors page="page none existent" />,
     },
 ]
