@@ -11,8 +11,8 @@ const mItems = [
     },
     {
         menu: "Mm",
-        name: "Items",
-        path: "/items",
+        name: "Shop",
+        path: "/shop",
     },
     {
         menu: "Mm",

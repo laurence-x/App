@@ -1,25 +1,25 @@
 import Errors from "../pages/errors"
-import { ElsIts } from "./rt_Els_Its"
+import { ElsShp } from "./rt_Els_Shp"
 
 export const RoutesIts = [
     {
         index: true,
-        element: <ElsIts.Items />,
+        element: <ElsShp.Items />,
         errorElement: <Errors page="items" />,
     },
     {
         path: ":id",
-        element: <ElsIts.Item />,
+        element: <ElsShp.Item />,
         errorElement: <Errors page="item :id" />,
     },
     {
         path: "cart",
-        element: <ElsIts.CartI />,
+        element: <ElsShp.CartI />,
         errorElement: <Errors page="cart" />,
     },
     {
         path: "*",
-        element: <ElsIts.Items />,
+        element: <ElsShp.Items />,
         errorElement: <Errors page="items none existent" />,
     },
 ]

@@ -3,7 +3,7 @@ import { RouteObject } from "react-router-dom"
 import { RoutesBps } from "./routes_Bps"
 import { RoutesDps } from "./routes_Dps"
 import { RoutesHks } from "./routes_Hks"
-import { RoutesIts } from "./routes_Its"
+import { RoutesIts } from "./routes_Shp"
 import { Els } from "./rt_Els"
 
 export const Routes: RouteObject[] = [
@@ -38,8 +38,8 @@ export const Routes: RouteObject[] = [
         errorElement: <Els.Errors page="Reset" />,
     },
     {
-        path: "items",
-        element: <Els.LayItems />,
+        path: "shop",
+        element: <Els.LayShp />,
         children: RoutesIts,
     },
     {

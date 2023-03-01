@@ -6,7 +6,7 @@ import {
     useState,
 } from "react"
 
-import { reducer } from "../items/reducer"
+import { reducer } from "../shop/reducer"
 import { TpCxProv, TpCxUsr, TpCxVals, TpIcart } from "../types/TpCTX" // types
 
 const CCX = createContext({} as TpCxVals)

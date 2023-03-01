@@ -1,7 +1,6 @@
-import React from "react"
 import { Outlet } from "react-router-dom"
 
-const LayItems = () => {
+const LayShp = () => {
     return (
         <>
             <Outlet />
@@ -9,4 +8,4 @@ const LayItems = () => {
     )
 }
 
-export default LayItems
+export default LayShp

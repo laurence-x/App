@@ -8,11 +8,11 @@ export default function SrcInp() {
     const pn = useLocation().pathname.toLowerCase()
 
     const goI = () => {
-        // go to home if on any part besides items
-        !pn.includes("items") && pn.split("/").pop() && nvg("/")
+        // go to home if on any path besides shop
+        !pn.includes("shop") && pn.split("/").pop() && nvg("/")
 
-        // go to items if on any items child paths
-        pn.includes("items/") && nvg("/items")
+        // go to shop if on any shop child paths
+        pn.includes("shop/") && nvg("/shop")
     }
 
     const sVl = (e: TpStr) => setSrcV(e.target.value)

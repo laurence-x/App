@@ -8,7 +8,7 @@ export const Els = {
     Recovery: lazy(() => import("../user/recovery/recovery")),
     Res: lazy(() => import("../user/reset/reset")),
 
-    LayItems: lazy(() => import("../layouts/lay_Items")),
+    LayShp: lazy(() => import("../layouts/lay_Shp")),
     Nasa: lazy(() => import("../pages/nasa")),
 
     LayHks: lazy(() => import("../layouts/lay_Hks")),

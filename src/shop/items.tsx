@@ -49,7 +49,7 @@ const Items = () => {
                             type="button"
                             value="details"
                             className="fc"
-                            onMouseUp={() => nvg(`/items/${i.Iid}`)}
+                            onMouseUp={() => nvg(`/shop/${i.Iid}`)}
                         />
                         <input
                             type="button"
