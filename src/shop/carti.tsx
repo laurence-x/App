@@ -47,6 +47,7 @@ const CartI = () => {
                         <option value="EUR">view in Euro</option>
                         <option value="GBP">view in Pound Sterling</option>
                     </select>
+                    <br />
                     <h2 className="c g">{`Total: ${tp} ${cur}`}</h2>
                     <br />
                     {cart.map(

@@ -27,15 +27,15 @@ const Item = () => {
             <div className="fx m">
                 <input
                     type="button"
-                    value="to cart"
-                    className="fc"
-                    onMouseUp={ItoC.bind(this, i)}
-                />
-                <input
-                    type="button"
                     value="back"
                     className="fc"
                     onMouseUp={back}
+                />
+                <input
+                    type="button"
+                    value="to cart"
+                    className="fc"
+                    onMouseUp={ItoC.bind(this, i)}
                 />
             </div>
         </div>
