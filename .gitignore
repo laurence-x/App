@@ -1,13 +1,8 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# more about ignoring files https://help.github.com/articles/ignoring-files
 
 logs
 *.log
 *.txt
-
-# php
-*.php
-/src/php
-/src/visitor
 
 # dependencies
 /node_modules
