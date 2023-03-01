@@ -1,7 +1,7 @@
 import Errors from "../pages/errors"
 import { ElsShp } from "./rt_Els_Shp"
 
-export const RoutesIts = [
+export const RoutesShp = [
     {
         index: true,
         element: <ElsShp.Items />,
