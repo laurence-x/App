@@ -4,13 +4,13 @@ const Test = () => {
     const [ Res, setRes ] = useState("")
 
     useEffect(() => {
-        // setRes('xxx')
+        // setRes('xxx') // if no fetching
 
-        //~ is it fetching the proxy key entry?: http://127.0.0.1:3001/....
         let data = new URLSearchParams()
         data.append("Key", "Value")
+
+        //~ fetching the "proxy": "http://127.0.0.1:3001", key in package.json
         fetch("path?a=111&b=222", {
-            // fetch("cluster_test", {
             method: "POST",
             body: data,
         })
