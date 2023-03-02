@@ -7,16 +7,19 @@ const Test = () => {
         // setRes('xxx') // if no fetching
 
         let data = new URLSearchParams()
-        data.append("Key", "Value")
+        data.append("name", "Xname")
+        data.append("email", "aaaa@x.com")
 
         //~ fetching the "proxy": "http://127.0.0.1:3001", key in package.json
-        fetch("path?a=111&b=222", {
+        fetch("user", {
             method: "POST",
             body: data,
         })
-            // .then((r) => r.json())
             .then((r) => r.text())
-            .then((r) => setRes(r))
+            .then((r) => {
+                // let uuu = JSON.parse(r)
+                setRes(r)
+            })
             .catch((e) => setRes(e))
     }, [])
 
