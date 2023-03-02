@@ -32,11 +32,6 @@ const mItems = [
     },
     {
         menu: "Hk",
-        name: "useID",
-        path: "/hks/useID",
-    },
-    {
-        menu: "Hk",
         name: "useParams",
         path: "/hks/usePrm",
     },
@@ -69,11 +64,6 @@ const mItems = [
         menu: "Hk",
         name: "useState",
         path: "/hks/useStt",
-    },
-    {
-        menu: "Hk",
-        name: "useTransition",
-        path: "/hks/useTrs",
     },
     {
         menu: "Hk",

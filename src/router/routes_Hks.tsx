@@ -13,11 +13,6 @@ export const RoutesHks = [
         errorElement: <Errors page="useRf" />,
     },
     {
-        path: "useID",
-        element: <ElsHks.UseId />,
-        errorElement: <Errors page="useID" />,
-    },
-    {
         path: ":usePrm",
         element: <ElsHks.UsePrm />,
         errorElement: <Errors page="usePrm" />,
@@ -53,11 +48,6 @@ export const RoutesHks = [
         errorElement: <Errors page="useStt" />,
     },
     {
-        path: "useTrs",
-        element: <ElsHks.UseTrs />,
-        errorElement: <Errors page="useTrs" />,
-    },
-    {
         path: "useRdc",
         element: <ElsHks.UseRdc />,
         errorElement: <Errors page="useRdc" />,
@@ -75,6 +65,6 @@ export const RoutesHks = [
     {
         path: "*",
         element: <ElsHks.UseCtx />,
-        errorElement: <Errors page="hooks none existend" />,
+        errorElement: <Errors page="hooks none existent" />,
     },
 ]
