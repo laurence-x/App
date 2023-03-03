@@ -1,8 +1,11 @@
 {
   "homepage": "https://www.laurencex.com",
   "name": "app",
+  "description": "laurencex.com",
   "version": "1.0.0",
   "private": true,
+  "keywords": [],
+  "author": "laurencex.com",
   "proxy": "http://127.0.0.1:3001",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
