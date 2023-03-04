@@ -16,10 +16,8 @@ const Test = () => {
             body: data,
         })
             .then((r) => r.text())
-            .then((r) => {
-                // let uuu = JSON.parse(r)
-                setRes(r)
-            })
+            //TODO here also check for status code 200, else output is an error
+            .then((r) => setRes(r))
             .catch((e) => setRes(e))
     }, [])
 
