@@ -10,7 +10,7 @@ const Test = () => {
         data.append("name", "Xname")
         data.append("email", "aaaa@x.com")
 
-        //~ fetching the "proxy": "http://127.0.0.1:3001", key in package.json
+        //~ fetching the package.json key "proxy": "http://127.0.0.1:3001"
         fetch("user", {
             method: "POST",
             body: data,
